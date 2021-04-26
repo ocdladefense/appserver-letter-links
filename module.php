@@ -9,7 +9,7 @@ class LetterLinksModule extends Module
 		parent::__construct();
 	}
 
-	public function test()
+	public function home()
 	{
         $t = new Translate(__DIR__ . '/src/lang',array("en.txt","es.txt"));
         //$t->get('menu_faq','en');//->faqs
@@ -19,6 +19,15 @@ class LetterLinksModule extends Module
 		"t" => $t
 		));
     }
+	public function test(){
+        $t = new Translate(__DIR__ . '/src/lang',array("en.txt","es.txt"));
+        //$t->get('menu_faq','en');//->faqs
+        $tpl = new TestTemplate("letter-links");
+		$tpl->addPath(__DIR__ . "/templates");
+        return $tpl->render(array(
+		"t" => $t
+		));
+	}
 }
 
 ?>

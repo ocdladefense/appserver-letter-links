@@ -12,9 +12,9 @@
         text-transform: uppercase;
         font-size: 1.5rem !important;
         color: #fff;
-    text-transform: uppercase;
-    font-weight: 700;
-    text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-decoration: none;
     }
     .fas{
         font-size: 1.5rem !important;
@@ -62,15 +62,15 @@
 
         <li class="home-menu-item"><i class="fas fa-comment-dots fa-2x" aria-hidden="true"></i><a href="/feedback">feedback</a></li>
 
-        <li class="home-menu-item"><i class="fas fa-mobile-alt fa-2x" aria-hidden="true"></i><a href="/contact">contact us</a></li>
+        <li class="home-menu-item"><i class="fas fa-mobile-alt fa-2x" aria-hidden="true"></i><a href="/contact"><?php echo($t->get('es','footer_contact')); ?></a></li>
         </ul><script> document.body.classList.add("is-home");</script>							
     </div>
     <div id="body">
         <?php //var_dump($t);
             const BR = "<br/>";
-            echo("<div id=\"title\">".$t->get('en','body_title')."</div>".BR);
-            echo("<b>".$t->get('en','body_subtitle')."</b>".BR);
-            echo("<p>".$t->get('en','body_paragraph1')."</p>");
+            echo("<div id=\"title\">".$t->get('es','body_title')."</div>".BR);
+            echo("<b>".$t->get('es','body_subtitle')."</b>".BR);
+            echo("<p>".$t->get('es','body_paragraph1')."</p>");
         ?>
 </div>
 

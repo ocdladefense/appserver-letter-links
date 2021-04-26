@@ -1,5 +1,6 @@
 {
 	"comment": "Module definition file.",
+	"connectedApp":"default",
 	"name": "letter-links",
 	"description": "letter-links",
 	"files": [
@@ -7,9 +8,15 @@
         "Translate.php"
 	],
 	"routes": {
-		"letterLinks/test": {
+		"letterlinks/home": {
 			"callback": "test",
 			"content-type": "text\/html"
+		},
+		"letterlinks/test": {
+			"callback": "test",
+			"content-type": "text\/html",
+			"access":"is_authenticated",
+			"authorization":"webserver"
 		}
     }
 }
