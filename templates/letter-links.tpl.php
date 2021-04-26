@@ -71,6 +71,10 @@
             echo("<div id=\"title\">".$t->get('es','body_title')."</div>".BR);
             echo("<b>".$t->get('es','body_subtitle')."</b>".BR);
             echo("<p>".$t->get('es','body_paragraph1')."</p>");
+            echo("<p>".$t->get('es','body_paragraph2')."</p>");
+            echo("<p>".$t->get('es','body_paragraph3')."</p>");
+            echo("<p>".$t->get('es','body_paragraph4')."</p>");
+            echo("<p>".$t->get('es','body_paragraph5')."</p>");
         ?>
 </div>
 
