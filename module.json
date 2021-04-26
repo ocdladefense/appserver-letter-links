@@ -5,7 +5,15 @@
 	"description": "letter-links",
 	"files": [
 		"TestTemplate.php",
-        "Translate.php"
+        "Translate.php",
+		"Class.php",
+		"ClassManager.php",
+		"EnglishPack.php",
+		"LanguageManager.php",
+		"PictureManager.php",
+		"PicturePack.php",
+		"SoundManager.php",
+		"SPanishPack.php"
 	],
 	"routes": {
 		"letterlinks/about": {
@@ -40,6 +48,7 @@
 			"callback": "es",
 			"content-type": "text\/html"
 		},
+
 		"letterlinks/login": {
 			"callback": "login",
 			"content-type": "text\/html"
