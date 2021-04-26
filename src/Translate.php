@@ -6,12 +6,14 @@ class Translate {
 
 	public function __construct($path,$files)
 	{
+
         if(!is_dir($path)){
             throw new Exception("Not a directory");
         }
         foreach ($files as $file) {
             $key = substr($file, 0, strpos($file, "."));
             $this->data[$key] = array();
+
             $output = fopen($path."/".$file, 'r');
             while (($line = fgets($output)) !== false) {
                 $data = explode(",", trim($line),2);

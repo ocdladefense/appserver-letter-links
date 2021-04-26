@@ -23,8 +23,8 @@ class TestTemplate extends Template {
 
 
 
-		public function __construct() {
-			parent::__construct("letter-links");
+		public function __construct($tplName) {
+			parent::__construct($tplName);
 			
 			$this->addStyles($this->css);
 

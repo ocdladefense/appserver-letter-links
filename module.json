@@ -8,8 +8,48 @@
         "Translate.php"
 	],
 	"routes": {
-		"letterlinks/home": {
-			"callback": "test",
+		"letterlinks/about": {
+			"callback": "about",
+			"content-type": "text\/html"
+		},
+		"letterlinks/es/%about": {
+			"callback": "es",
+			"content-type": "text\/html"
+		},
+		"letterlinks/faq": {
+			"callback": "faq",
+			"content-type": "text\/html"
+		},
+		"letterlinks/es/%faq": {
+			"callback": "es",
+			"content-type": "text\/html"
+		},
+		"letterlinks/help": {
+			"callback": "help",
+			"content-type": "text\/html"
+		},
+		"letterlinks/es/%help": {
+			"callback": "es",
+			"content-type": "text\/html"
+		},
+		"letterlinks/resources": {
+			"callback": "help",
+			"content-type": "text\/html"
+		},
+		"letterlinks/es/%resources": {
+			"callback": "es",
+			"content-type": "text\/html"
+		},
+		"letterlinks/login": {
+			"callback": "login",
+			"content-type": "text\/html"
+		},
+		"letterlinks/logout": {
+			"callback": "logout",
+			"content-type": "text\/html"
+		},
+		"letterlinks/forgotpassword": {
+			"callback": "forgotPassword",
 			"content-type": "text\/html"
 		},
 		"letterlinks/test": {
