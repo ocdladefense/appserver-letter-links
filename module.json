@@ -1,0 +1,15 @@
+{
+	"comment": "Module definition file.",
+	"name": "letter-links",
+	"description": "letter-links",
+	"files": [
+		"TestTemplate.php",
+        "Translate.php"
+	],
+	"routes": {
+		"letterLinks/test": {
+			"callback": "test",
+			"content-type": "text\/html"
+		}
+    }
+}
