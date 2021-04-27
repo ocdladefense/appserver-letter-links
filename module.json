@@ -8,15 +8,15 @@
         "Translate.php"
 	],
 	"routes": {
-		"letterlinks/home": {
+		"letterlinks": {
 			"callback": "test",
 			"content-type": "text\/html"
 		},
-		"letterlinks/test": {
+		"letterlinks/login": {
 			"callback": "test",
 			"content-type": "text\/html",
 			"access":"is_authenticated",
 			"authorization":"webserver"
 		}
-    }
+	}
 }
