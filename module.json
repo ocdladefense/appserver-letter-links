@@ -16,6 +16,10 @@
 		"SPanishPack.php"
 	],
 	"routes": {
+		"letterlinks": {
+			"callback": "test",
+			"content-type": "text\/html"
+		},
 		"letterlinks/about": {
 			"callback": "about",
 			"content-type": "text\/html"
@@ -61,11 +65,11 @@
 			"callback": "forgotPassword",
 			"content-type": "text\/html"
 		},
-		"letterlinks/test": {
+		"letterlinks/login": {
 			"callback": "test",
 			"content-type": "text\/html",
 			"access":"is_authenticated",
 			"authorization":"webserver"
 		}
-    }
+	}
 }
