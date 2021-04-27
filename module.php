@@ -134,7 +134,7 @@ class LetterLinksModule extends Module
 
 
 
-	public function test(){
+	public function test2(){
         $t = new Translate(__DIR__ . '/src/about',array("en.txt","es.txt"));
 
 		// $tpl = new TestTemplate("letter-links-en");
@@ -147,6 +147,15 @@ class LetterLinksModule extends Module
         return $tpl->render(array(
 			"t" => $t
 		));
+	}
+
+	public function getPictures($lang, $sound){
+
+		$pathToImages = __DIR__ . "/content/images/{$lang}/{$sound[0]}/$sound";
+
+		var_dump(PictureManager::getPictures($pathToImages));
+
+		exit;
 	}
 	
 	
