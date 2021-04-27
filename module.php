@@ -151,11 +151,31 @@ class LetterLinksModule extends Module
 
 	public function getPictures($lang, $sound){
 
-		$pathToImages = __DIR__ . "/content/images/{$lang}/{$sound[0]}/$sound";
+		$pictures = PictureManager::getPictures("en", "A", "Short%20A");
 
-		var_dump(PictureManager::getPictures($pathToImages));
+		
+		$tpl = new Template("pictures");
+		$tpl->addPath(__DIR__ . "/templates");
+
+		return $tpl->render(array("pictures" => $pictures));
+	}
+
+	public function pictureUploadForm() {
+
+		$tpl = new Template("picture-upload");
+		$tpl->addPath(__DIR__ . "/templates");
+
+		return $tpl->render(array("recordId" => "some user id"));
+	}
+
+	public function uploadPictures() {
+
+		$path = __DIR__ . "/content/images/{$_POST['Language']}/{$_POST['LetterSound'][0]}/{$_POST['LetterSound']}";
+
+		var_dump($_FILES, $_POST, $path);
 
 		exit;
+
 	}
 	
 	

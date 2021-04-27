@@ -2,7 +2,24 @@
 
 class PictureManager {
 
-    public static function getPictures($dir){
+    public static function getPictures($lang = null, $letter = null, $sound = null){
+
+        $images = array(
+            "Acrobat" => "/modules/letter-links/content/images/{$lang}/{$letter}/{$sound}/acrobat.jpg",
+            "Alligator" => "/modules/letter-links/content/images/{$lang}/{$letter}/{$sound}/alligator.jpg",
+            "Anchovy" => "/modules/letter-links/content/images/{$lang}/{$letter}/{$sound}/anchovy.jpg",
+            "Ant" => "/modules/letter-links/content/images/{$lang}/{$letter}/{$sound}/ant2.jpg",
+            "Anteater" => "/modules/letter-links/content/images/{$lang}/{$letter}/{$sound}/anteater.jpg"
+        );
+
+        return $images;
+    }
+
+    public static function getPictures2($dir){
+
+        
+
+        if(!file_exists($dir)) throw new Exception("PICTURE_REQUEST_ERROR: No pictures saved for given letter sound.");
 
         // Scan the directory for image files removing the "parent", and "current" directories from the results.
         $images = array_diff(scandir($dir), array(".", ".."));
@@ -21,7 +38,7 @@ class PictureManager {
                 $index++;
             }
 
-            $imageInfo[$imageName] = $dir . "/$image";
+            $imageInfo[$imageName] = "/$image";
         }
 
         return $imageInfo;
@@ -32,6 +49,14 @@ class PictureManager {
         $imageName = preg_replace("/[0-9,_]+/", "", $image);
 
         return ucwords(explode(".", $imageName)[0]);
+    }
+
+    public static function uploadPictures($dir) {
+
+        var_dump($dir);
+
+        exit;
+
     }
 }
 ?>
