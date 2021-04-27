@@ -2,13 +2,13 @@ Letter Links Module\
     adding translation as a class\
 \
 existing letterlinks home\
-    https://letterlinks.highscope.org/doc/about.aspx\
+    https://letterlinks.highscope.org/doc/about.aspx
 \
 letterlinks login\
-    https://letterlinks.highscope.org/Login.aspx\
+    https://letterlinks.highscope.org/Login.aspx
 \
 letterlinks product page\
-    https://secure.highscope.org/ecom/productpage/1d55b545-f784-4140-ad97-b527574f38c7?lang=en-US\
+    https://secure.highscope.org/ecom/productpage/1d55b545-f784-4140-ad97-b527574f38c7?lang=en-US
 \
 \
 new letterlinks landing page\
@@ -19,3 +19,6 @@ protected letterlinks page\
 \
 chapter letterlinks chapter pages\
     each module for a chapter\
+
+
+
