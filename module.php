@@ -134,7 +134,7 @@ class LetterLinksModule extends Module
 
 
 
-	public function test(){
+	public function test2(){
         $t = new Translate(__DIR__ . '/src/about',array("en.txt","es.txt"));
 
 		// $tpl = new TestTemplate("letter-links-en");
@@ -147,6 +147,35 @@ class LetterLinksModule extends Module
         return $tpl->render(array(
 			"t" => $t
 		));
+	}
+
+	public function getPictures($lang, $sound){
+
+		$pictures = PictureManager::getPictures("en", "A", "Short%20A");
+
+		
+		$tpl = new Template("pictures");
+		$tpl->addPath(__DIR__ . "/templates");
+
+		return $tpl->render(array("pictures" => $pictures));
+	}
+
+	public function pictureUploadForm() {
+
+		$tpl = new Template("picture-upload");
+		$tpl->addPath(__DIR__ . "/templates");
+
+		return $tpl->render(array("recordId" => "some user id"));
+	}
+
+	public function uploadPictures() {
+
+		$path = __DIR__ . "/content/images/{$_POST['Language']}/{$_POST['LetterSound'][0]}/{$_POST['LetterSound']}";
+
+		var_dump($_FILES, $_POST, $path);
+
+		exit;
+
 	}
 	
 	

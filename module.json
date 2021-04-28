@@ -52,7 +52,6 @@
 			"callback": "es",
 			"content-type": "text\/html"
 		},
-
 		"letterlinks/login": {
 			"callback": "login",
 			"content-type": "text\/html"
@@ -65,11 +64,24 @@
 			"callback": "forgotPassword",
 			"content-type": "text\/html"
 		},
-		"letterlinks/login": {
+		"letterlinks/login2": {
 			"callback": "test",
 			"content-type": "text\/html",
 			"access":"is_authenticated",
 			"authorization":"webserver"
+		},
+		"pictures/%lang/%sound":{
+			"callback": "getPictures",
+			"content-type": "text/html"	
+		},
+		"pictures/upload/form":{
+			"callback": "pictureUploadForm",
+			"content-type": "text/html"	
+		},
+		"pictures/upload":{
+			"callback": "uploadPictures",
+			"content-type": "application/json"	
 		}
+
 	}
 }
