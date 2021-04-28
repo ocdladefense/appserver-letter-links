@@ -10,6 +10,6 @@ class SoundManager {
     public static function getSound($lang,$letter,$sound){
                 //get sounds by query
     }
-
+    
 }
 ?>
