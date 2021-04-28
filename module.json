@@ -70,18 +70,9 @@
 			"access":"is_authenticated",
 			"authorization":"webserver"
 		},
-		"pictures/%lang/%sound":{
+		"pictures/%lang/%letter/%sound":{
 			"callback": "getPictures",
 			"content-type": "text/html"	
-		},
-		"pictures/upload/form":{
-			"callback": "pictureUploadForm",
-			"content-type": "text/html"	
-		},
-		"pictures/upload":{
-			"callback": "uploadPictures",
-			"content-type": "application/json"	
 		}
-
 	}
 }

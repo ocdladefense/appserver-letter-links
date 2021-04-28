@@ -3,15 +3,35 @@
 class PictureManager {
 
     public static function getPictures($lang = null, $letter = null, $sound = null){
+        
+        $basePath = "/modules/letter-links/content/images/{$lang}/{$letter}/{$sound}";
 
         $images = array(
-            "Acrobat" => "/modules/letter-links/content/images/{$lang}/{$letter}/{$sound}/acrobat.jpg",
-            "Alligator" => "/modules/letter-links/content/images/{$lang}/{$letter}/{$sound}/alligator.jpg",
-            "Anchovy" => "/modules/letter-links/content/images/{$lang}/{$letter}/{$sound}/anchovy.jpg",
-            "Ant" => "/modules/letter-links/content/images/{$lang}/{$letter}/{$sound}/ant2.jpg",
-            "Anteater" => "/modules/letter-links/content/images/{$lang}/{$letter}/{$sound}/anteater.jpg"
+            "Acrobat" => "{$basePath}/acrobat.jpg",
+            "Alligator" => "{$basePath}/alligator.jpg",
+            "Anchovy" => "{$basePath}/anchovy.jpg",
+            "Ant" => "{$basePath}/ant2.jpg",
+            "Anteater" => "{$basePath}/anteater.jpg"
         );
 
+        if($letter == "D"){
+
+            $images = array(
+                "Daisy" => "{$basePath}/daisy.jpg",
+                "Dalmatian" => "{$basePath}/dalmatian.jpg",
+                "Dinosaur" => "{$basePath}/dinosaur.jpg",
+                "Dog2" => "{$basePath}/dog2.jpg",
+                "Dolphin" => "{$basePath}/dolphin.jpg",
+                "Donut" => "{$basePath}/donut.jpg",
+                "Door" => "{$basePath}/door.jpg",
+                "Door2" => "{$basePath}/door2.jpg",
+                "Duck" => "{$basePath}/Duck.jpg",
+                "Duck2" => "{$basePath}/duck2.jpg",
+                "Dumptruck" => "{$basePath}/dumptruck1.jpg",
+                "Diamond" => "{$basePath}/shape.jpg"
+            );
+
+        }
         return $images;
     }
 

@@ -149,9 +149,11 @@ class LetterLinksModule extends Module
 		));
 	}
 
-	public function getPictures($lang, $sound){
+	///////////////////////////	PICTURE MANAGER FUNCTIONALITY	//////////////////////////////////////////////////////
 
-		$pictures = PictureManager::getPictures("en", "A", "Short%20A");
+	public function getPictures($lang, $letter, $sound){
+
+		$pictures = PictureManager::getPictures($lang, $letter, $sound);
 
 		
 		$tpl = new Template("pictures");
