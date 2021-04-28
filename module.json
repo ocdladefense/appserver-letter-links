@@ -6,14 +6,10 @@
 	"files": [
 		"TestTemplate.php",
         "Translate.php",
-		"Class.php",
 		"ClassManager.php",
-		"EnglishPack.php",
 		"LanguageManager.php",
 		"PictureManager.php",
-		"PicturePack.php",
-		"SoundManager.php",
-		"SPanishPack.php"
+		"SoundManager.php"
 	],
 	"routes": {
 		"letterlinks": {
@@ -52,7 +48,6 @@
 			"callback": "es",
 			"content-type": "text\/html"
 		},
-
 		"letterlinks/login": {
 			"callback": "login",
 			"content-type": "text\/html"
@@ -65,11 +60,15 @@
 			"callback": "forgotPassword",
 			"content-type": "text\/html"
 		},
-		"letterlinks/login": {
+		"letterlinks/login2": {
 			"callback": "test",
 			"content-type": "text\/html",
 			"access":"is_authenticated",
 			"authorization":"webserver"
+		},
+		"pictures/%lang/%letter/%sound":{
+			"callback": "getPictures",
+			"content-type": "text/html"	
 		}
 	}
 }
