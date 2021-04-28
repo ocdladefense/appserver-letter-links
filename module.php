@@ -6,10 +6,9 @@ class LetterLinksModule extends Module
 {
 
 
-	public function __construct($path,$packages)
+	public function __construct($path)
 	{
 		parent::__construct($path);
-		parent::setPackages($packages);
 	}
 
 	public function es($route){

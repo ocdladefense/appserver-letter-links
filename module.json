@@ -15,12 +15,7 @@
 		"SoundManager.php",
 		"SpanishPack.php"
 	],
-	"packages":{
-		"languages":[
-			"en.txt",
-			"es.txt"
-		]
-	},
+	"languages":["en","es"],
 	"routes": {
 		"letterlinks/about": {
 			"callback": "about",

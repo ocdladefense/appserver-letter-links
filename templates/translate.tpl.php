@@ -8,5 +8,7 @@
             echo("<p>".t('body_paragraph3')."</p>");
             echo("<p>".t('body_paragraph4')."</p>");
             echo("<p>".t('body_paragraph5')."</p>");
+
+            echo("<p>".t('test','lang','folder')."</p>");
         ?>
     </div>
