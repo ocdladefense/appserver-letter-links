@@ -117,6 +117,7 @@ class LetterLinksModule extends Module
 
 
 
+
 	public function test(){
         $t = new T(__DIR__ . '/src/about',array("en.txt","es.txt"));
 
@@ -132,16 +133,36 @@ class LetterLinksModule extends Module
 		));
 	}
 
-	public function translate(){
-		$lang = $_GET["lang"] ?? "sp";
-		$tpl = new TestTemplate("translate");
+	///////////////////////////	PICTURE MANAGER FUNCTIONALITY	//////////////////////////////////////////////////////
+
+	public function getPictures($lang, $letter, $sound){
+
+		$pictures = PictureManager::getPictures($lang, $letter, $sound);
+
+		
+		$tpl = new Template("pictures");
 		$tpl->addPath(__DIR__ . "/templates");
-		//$tpl->addStyles($homeFiles."/styles");
-		//$tpl->addScripts($homeFiles."/scripts");
-        return $tpl->render(array(
-			"lang" => $lang
-		));
-    }
-	
+
+		return $tpl->render(array("pictures" => $pictures));
+	}
+
+	public function pictureUploadForm() {
+
+		$tpl = new Template("picture-upload");
+		$tpl->addPath(__DIR__ . "/templates");
+
+		return $tpl->render(array("recordId" => "some user id"));
+	}
+
+	public function uploadPictures() {
+
+		$path = __DIR__ . "/content/images/{$_POST['Language']}/{$_POST['LetterSound'][0]}/{$_POST['LetterSound']}";
+
+		var_dump($_FILES, $_POST, $path);
+
+		exit;
+
+	}
+
 	
 }

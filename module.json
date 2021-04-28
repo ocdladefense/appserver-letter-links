@@ -54,7 +54,6 @@
 			"callback": "es",
 			"content-type": "text\/html"
 		},
-
 		"letterlinks/login": {
 			"callback": "login",
 			"content-type": "text\/html"
@@ -67,15 +66,15 @@
 			"callback": "forgotPassword",
 			"content-type": "text\/html"
 		},
-		"letterlinks/translate": {
-			"callback": "translate",
-			"content-type": "text\/html"
-		},
-		"letterlinks/test": {
+		"letterlinks/login2": {
 			"callback": "test",
 			"content-type": "text\/html",
 			"access":"is_authenticated",
 			"authorization":"webserver"
+		},
+		"pictures/%lang/%letter/%sound":{
+			"callback": "getPictures",
+			"content-type": "text/html"	
 		}
     }
 }
