@@ -1,9 +1,8 @@
 <?php
 
-class Translate {
+class T {
 
     public $data;
-
 	public function __construct($path,$files)
 	{
 

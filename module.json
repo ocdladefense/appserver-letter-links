@@ -13,13 +13,15 @@
 		"PictureManager.php",
 		"PicturePack.php",
 		"SoundManager.php",
-		"SPanishPack.php"
+		"SpanishPack.php"
 	],
+	"packages":{
+		"languages":[
+			"en.txt",
+			"es.txt"
+		]
+	},
 	"routes": {
-		"letterlinks": {
-			"callback": "test",
-			"content-type": "text\/html"
-		},
 		"letterlinks/about": {
 			"callback": "about",
 			"content-type": "text\/html"
@@ -74,5 +76,5 @@
 			"callback": "getPictures",
 			"content-type": "text/html"	
 		}
-	}
+    }
 }
