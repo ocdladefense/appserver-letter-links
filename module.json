@@ -6,14 +6,10 @@
 	"files": [
 		"TestTemplate.php",
         "Translate.php",
-		"Class.php",
 		"ClassManager.php",
-		"EnglishPack.php",
 		"LanguageManager.php",
 		"PictureManager.php",
-		"PicturePack.php",
-		"SoundManager.php",
-		"SPanishPack.php"
+		"SoundManager.php"
 	],
 	"routes": {
 		"letterlinks": {
