@@ -6,9 +6,10 @@ class LetterLinksModule extends Module
 {
 
 
-	public function __construct()
+	public function __construct($path,$packages)
 	{
-		parent::__construct();
+		parent::__construct($path);
+		parent::setPackages($packages);
 	}
 
 	public function es($route){
@@ -37,7 +38,6 @@ class LetterLinksModule extends Module
 	public function about($lang = null)
 	{
 
-		$t = new Translate(__DIR__ . '/src/lang',array("en.txt","es.txt"));
 		//$t->get('menu_faq','en');//->faqs
 		// $tpl = new TestTemplate("letter-links-en");
 		
@@ -49,25 +49,8 @@ class LetterLinksModule extends Module
 		
 		
 		
-		return $tpl->render(array(
-			"t" => $t
-		));
+		return $tpl->render(array(		));
 	}
-    
-    
-	public function test(){
-		$t = new Translate(__DIR__ . '/src/lang',array("en.txt","es.txt"));
-
-		$homeFiles = __DIR__ . '/src/about';
-		$lang = $lang == "es" ? "-".$lang : "";
-        $tpl = new Template("about".$lang);
-		$tpl->addPath(__DIR__ . "/templates");
-		//$tpl->addStyles($homeFiles."/styles");
-		//$tpl->addScripts($homeFiles."/scripts");
-        return $tpl->render(array(
-			"files" => $homeFiles
-		));
-    }
 
 	public function faq($lang = null)
 	{
@@ -135,7 +118,7 @@ class LetterLinksModule extends Module
 
 
 	public function test(){
-        $t = new Translate(__DIR__ . '/src/about',array("en.txt","es.txt"));
+        $t = new T(__DIR__ . '/src/about',array("en.txt","es.txt"));
 
 		// $tpl = new TestTemplate("letter-links-en");
 		$lang = $_GET["lang"] ?? "sp";
@@ -148,6 +131,17 @@ class LetterLinksModule extends Module
 			"t" => $t
 		));
 	}
+
+	public function translate(){
+		$lang = $_GET["lang"] ?? "sp";
+		$tpl = new TestTemplate("translate");
+		$tpl->addPath(__DIR__ . "/templates");
+		//$tpl->addStyles($homeFiles."/styles");
+		//$tpl->addScripts($homeFiles."/scripts");
+        return $tpl->render(array(
+			"lang" => $lang
+		));
+    }
 	
 	
 }

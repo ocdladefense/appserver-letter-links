@@ -13,13 +13,15 @@
 		"PictureManager.php",
 		"PicturePack.php",
 		"SoundManager.php",
-		"SPanishPack.php"
+		"SpanishPack.php"
 	],
+	"packages":{
+		"languages":[
+			"en.txt",
+			"es.txt"
+		]
+	},
 	"routes": {
-		"letterlinks": {
-			"callback": "test",
-			"content-type": "text\/html"
-		},
 		"letterlinks/about": {
 			"callback": "about",
 			"content-type": "text\/html"
@@ -65,11 +67,15 @@
 			"callback": "forgotPassword",
 			"content-type": "text\/html"
 		},
-		"letterlinks/login": {
+		"letterlinks/translate": {
+			"callback": "translate",
+			"content-type": "text\/html"
+		},
+		"letterlinks/test": {
 			"callback": "test",
 			"content-type": "text\/html",
 			"access":"is_authenticated",
 			"authorization":"webserver"
 		}
-	}
+    }
 }
