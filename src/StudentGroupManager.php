@@ -11,10 +11,10 @@ class StudentGroupManager {
 
     public function getStudentList(){
 
-        return array(
+        $students = array(
             array(
                 "name" => "Joey Johnson",
-                "image"=> "/modules/letter-links/content/images/en/D/D-Dewan/dalmatian.jpg"
+                "image"=> "a54s687x4894189"
             ),            array(
                 "name" => "Timmy Dalton",
                 "image"=> "/modules/letter-links/content/images/en/D/D-Dewan/dalmatian.jpg"
@@ -44,5 +44,19 @@ class StudentGroupManager {
                 "image"=> "/modules/letter-links/content/images/en/D/D-Dewan/dalmatian.jpg"
             )
         );
+
+        $student = new Student("Joey Johnson");
+        $letterSound = $student->getLetterSound();
+        $image = PictureManager::getImage($letterSound);
+
+        return array(
+            array(
+                "name" => $student->getName(),
+
+                "image" => $image
+            )
+        );
+
+
     }
 }

@@ -35,6 +35,13 @@ class PictureManager {
         return $images;
     }
 
+    // Returns the correct image for the letter sound.
+    // Figure out how to incorprate the language and letter.
+    public static function getImage($letterSound, $lang = null, $letter = null){
+
+        return "/modules/letter-links/content/images/en/D/D-Dewan/daisy.jpg";
+    }
+
     public static function getPictures2($dir){
 
         if(!file_exists($dir)) throw new Exception("PICTURE_REQUEST_ERROR: No pictures saved for given letter sound.");
