@@ -1,10 +1,9 @@
-target,translation_es
+menu_about,sobre los enlaces
 menu_faq,preguntas frequentes
 menu_help,ayuda
 menu_resources,recursos
 menu_activities,actividades
 menu_login,registrarse
-sidebar,sobre los enlaces
 footer_terms,el contrato
 footer_contact,contactarnos
 footer_policy,terminos de privacidad
