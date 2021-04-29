@@ -14,42 +14,9 @@
 		"models/Teacher.php"
 	],
 	"languages":["en","es"],
-	"language-files":["about.en","about.es","help.en"],
 	"routes": {
-		"letterlinks/translate": {
-			"callback": "translate",
-			"content-type": "text\/html"
-		},
-		"letterlinks/about": {
-			"callback": "about",
-			"content-type": "text\/html"
-		},
-		"letterlinks/es/%about": {
-			"callback": "es",
-			"content-type": "text\/html"
-		},
-		"letterlinks/faq": {
-			"callback": "faq",
-			"content-type": "text\/html"
-		},
-		"letterlinks/es/%faq": {
-			"callback": "es",
-			"content-type": "text\/html"
-		},
-		"letterlinks/help": {
-			"callback": "help",
-			"content-type": "text\/html"
-		},
-		"letterlinks/es/%help": {
-			"callback": "es",
-			"content-type": "text\/html"
-		},
-		"letterlinks/resources": {
-			"callback": "help",
-			"content-type": "text\/html"
-		},
-		"letterlinks/es/%resources": {
-			"callback": "es",
+		"letterlinks/content/%page": {
+			"callback": "showPage",
 			"content-type": "text\/html"
 		},
 		"letterlinks/login": {
