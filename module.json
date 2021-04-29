@@ -8,7 +8,10 @@
 		"ClassManager.php",
 		"LanguageManager.php",
 		"PictureManager.php",
-		"SoundManager.php"
+		"StudentGroupManager.php",
+		"models/Student.php",
+		"models/StudentGroup.php",
+		"models/Teacher.php"
 	],
 	"languages":["en","es"],
 	"language-files":["about.en","about.es","help.en"],
@@ -69,6 +72,14 @@
 		},
 		"pictures/%lang/%letter/%sound":{
 			"callback": "getPictures",
+			"content-type": "text/html"	
+		},
+		"teachers/%tId/classes":{
+			"callback": "getClassList",
+			"content-type": "text/html"	
+		},
+		"classes/%cId/students":{
+			"callback": "getStudentList",
 			"content-type": "text/html"	
 		}
     }

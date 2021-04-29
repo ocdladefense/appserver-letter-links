@@ -6,7 +6,7 @@ class LetterLinksModule extends Module
 {
 
 
-	public function __construct($path)
+	public function __construct()
 	{
 		parent::__construct($path);
 	}
@@ -166,5 +166,27 @@ class LetterLinksModule extends Module
 
 	}
 
+	/////////////////////////////	Class Managment	/////////////////////////////////////////////////////////////
 	
+	public function getClassList($teacherId){
+
+		$cMgr = new ClassManager($teacherId);
+		$classList = $cMgr->getClassList();
+
+		$tpl = new Template("class-list");
+		$tpl->addPath(__DIR__ . "/templates");
+
+		return $tpl->render(array("classList" => $classList));
+	}
+
+	public function getStudentList($classId){
+
+		$studentGroup = new StudentGroupManager($classId);
+		$studentList = $studentGroup->getStudentList();
+
+		$tpl = new Template("student-list");
+		$tpl->addPath(__DIR__ . "/templates");
+
+		return $tpl->render(array("studentList" => $studentList));
+	}
 }

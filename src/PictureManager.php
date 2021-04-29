@@ -37,8 +37,6 @@ class PictureManager {
 
     public static function getPictures2($dir){
 
-        
-
         if(!file_exists($dir)) throw new Exception("PICTURE_REQUEST_ERROR: No pictures saved for given letter sound.");
 
         // Scan the directory for image files removing the "parent", and "current" directories from the results.
