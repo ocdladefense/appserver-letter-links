@@ -6,14 +6,10 @@
 	"files": [
 		"TestTemplate.php",
         "Translate.php",
-		"Class.php",
 		"ClassManager.php",
-		"EnglishPack.php",
 		"LanguageManager.php",
 		"PictureManager.php",
-		"PicturePack.php",
-		"SoundManager.php",
-		"SPanishPack.php"
+		"StudentGroupManager.php"
 	],
 	"routes": {
 		"letterlinks": {
@@ -72,6 +68,14 @@
 		},
 		"pictures/%lang/%letter/%sound":{
 			"callback": "getPictures",
+			"content-type": "text/html"	
+		},
+		"teachers/%tId/classes":{
+			"callback": "getClassList",
+			"content-type": "text/html"	
+		},
+		"classes/%cId/students":{
+			"callback": "getStudentList",
 			"content-type": "text/html"	
 		}
 	}

@@ -11,16 +11,41 @@ class ClassManager {
     }
 
     // Return a list of the teachers classes.
-    public function getClassList(){}
+    public function getClassList(){
 
-    // Return the class at the given "classId".
-    public function getClass($classId){}
-
-    // Add a class to the teachers list of classes.
-    public function addClass($obj){}
-
-    // Delete a class from the teachers list of classes.
-    public function deleteClass($classId){}
-
-
+        $classes = array(
+            array(
+                "name"  => "Daily Morning Class 1",
+                "image" => "/modules/letter-links/content/images/en/D/D-Dewan/daisy.jpg",
+                "imageName" => "Daisy"
+            ),
+            array(
+                "name"  => "Daily Morning Class 2",
+                "image" => "/modules/letter-links/content/images/en/D/D-Dewan/dalmatian.jpg",
+                "imageName" => "Dalmatian"
+            ),
+            array(
+                "name"  => "Daily Afternoon Class 1",
+                "image" => "/modules/letter-links/content/images/en/D/D-Dewan/dinosaur.jpg",
+                "imageName" => "Dinosaur"
+            ),
+            array(
+                "name"  => "Daily Afternoon Class 2",
+                "image" => "/modules/letter-links/content/images/en/D/D-Dewan/dog2.jpg",
+                "imageName" => "Dog"
+            ),
+            array(
+                "name"  => "Daily Evening Class 1",
+                "image" => "/modules/letter-links/content/images/en/D/D-Dewan/dolphin.jpg",
+                "imageName" => "Dolphin"
+            ),
+            array(
+                "name"  => "Daily Evening Class 2",
+                "image" => "/modules/letter-links/content/images/en/D/D-Dewan/donut.jpg",
+                "imageName" => "Donut"
+            )
+        );
+        
+        return $classes;
+    }
 }
