@@ -1,10 +1,10 @@
-target,translation
+menu_about,about letter links
 menu_faq,faqs
 menu_help,help
 menu_resources,resources
 menu_activities,activities
 menu_login,login
-sidebar about,letter links
+dropdown_sufix,languages
 footer_terms,terms & conditions
 footer_contact,contact us
 footer_policy,privacy policy

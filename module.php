@@ -13,7 +13,7 @@ class LetterLinksModule extends Module
 
 	public function showPage($page){
 		$loadFromFile = true;
-		$language = null;
+		$language = getDefaultLanguage();
 		$content = t($page,$language,$loadFromFile);
 
 		$tpl = new Template("page");
@@ -22,7 +22,8 @@ class LetterLinksModule extends Module
 
 
 		return $tpl->render(array(
-			"content" => $content
+			"content" => $content,
+			"page" => $page
 		));
 	}
 
