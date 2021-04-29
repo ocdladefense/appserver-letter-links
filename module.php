@@ -11,6 +11,13 @@ class LetterLinksModule extends Module
 		parent::__construct($path);
 	}
 
+	public function translate(){
+		$lang = $_GET["lang"] ?? "sp";
+		$tpl = new Template("translate");
+		$tpl->addPath(__DIR__ . "/templates");
+		return $tpl->render(array(		));
+	}
+
 	public function es($route){
 		switch ($route) {
 			case 'faq':
@@ -36,18 +43,9 @@ class LetterLinksModule extends Module
 
 	public function about($lang = null)
 	{
-
-		//$t->get('menu_faq','en');//->faqs
-		// $tpl = new TestTemplate("letter-links-en");
-		
-		
 		$lang = $_GET["lang"] ?? "sp";
-		
 		$tpl = new TestTemplate("letter-links-".$lang);
 		$tpl->addPath(__DIR__ . "/templates");
-		
-		
-		
 		return $tpl->render(array(		));
 	}
 
@@ -133,6 +131,11 @@ class LetterLinksModule extends Module
 	}
 
 	///////////////////////////	PICTURE MANAGER FUNCTIONALITY	//////////////////////////////////////////////////////
+
+	public function pictureListTpl($lang){
+		
+	}
+
 
 	public function getPictures($lang, $letter, $sound){
 

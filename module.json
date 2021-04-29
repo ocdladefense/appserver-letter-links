@@ -5,7 +5,6 @@
 	"description": "letter-links",
 	"files": [
 		"TestTemplate.php",
-        "Translate.php",
 		"ClassManager.php",
 		"LanguageManager.php",
 		"PictureManager.php",
@@ -15,7 +14,12 @@
 		"models/Teacher.php"
 	],
 	"languages":["en","es"],
+	"language-files":["about.en","about.es","help.en"],
 	"routes": {
+		"letterlinks/translate": {
+			"callback": "translate",
+			"content-type": "text\/html"
+		},
 		"letterlinks/about": {
 			"callback": "about",
 			"content-type": "text\/html"
