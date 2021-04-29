@@ -9,7 +9,10 @@
 		"ClassManager.php",
 		"LanguageManager.php",
 		"PictureManager.php",
-		"StudentGroupManager.php"
+		"StudentGroupManager.php",
+		"models/Student.php",
+		"models/StudentGroup.php",
+		"models/Teacher.php"
 	],
 	"languages":["en","es"],
 	"routes": {

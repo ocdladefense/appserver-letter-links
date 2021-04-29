@@ -6,7 +6,7 @@ class LetterLinksModule extends Module
 {
 
 
-	public function __construct($path)
+	public function __construct()
 	{
 		parent::__construct($path);
 	}
