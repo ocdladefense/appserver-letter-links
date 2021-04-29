@@ -9,6 +9,6 @@
             echo("<p>".t('body_paragraph4')."</p>");
             echo("<p>".t('body_paragraph5')."</p>");
 
-            echo("<p>".t('test','lang','folder')."</p>");
+            echo("<p>".t('target','en','about')."</p>");
         ?>
     </div>

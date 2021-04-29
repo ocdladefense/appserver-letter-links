@@ -5,18 +5,18 @@
 	"description": "letter-links",
 	"files": [
 		"TestTemplate.php",
-        "Translate.php",
-		"Class.php",
 		"ClassManager.php",
-		"EnglishPack.php",
 		"LanguageManager.php",
 		"PictureManager.php",
-		"PicturePack.php",
-		"SoundManager.php",
-		"SpanishPack.php"
+		"SoundManager.php"
 	],
 	"languages":["en","es"],
+	"language-files":["about.en","about.es","help.en"],
 	"routes": {
+		"letterlinks/translate": {
+			"callback": "translate",
+			"content-type": "text\/html"
+		},
 		"letterlinks/about": {
 			"callback": "about",
 			"content-type": "text\/html"
