@@ -70,6 +70,7 @@
         text-decoration: none;
         font-size: 17px;
         text-align: center;
+        min-height: 200px;
     }
     /* changes? */
     #stage-content{
