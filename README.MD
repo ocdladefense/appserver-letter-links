@@ -12,7 +12,8 @@ letterlinks product page\
 \
 \
 new letterlinks landing page\
-    ./letterlinks/home\
+    \letterlinks\content\about?lang=en\
+    \letterlinks\content\about?lang=es\
 \
 protected letterlinks page\
     ./letterlinks/test\
