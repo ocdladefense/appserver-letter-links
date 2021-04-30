@@ -1,5 +1,5 @@
 <div class="title">SOBRE LOS ENLACES DE LETRAS</div>
-<br>
+<br />
 <b>¿Qué son los enlaces de letras?</b>
 <p>
 El sistema de <i>Enlaces de letras</i> asocia la etiqueta onomástica del niño a
@@ -20,8 +20,8 @@ que se trata de la habilidad de prestar atención a los sonidos lingüísticos i
 de su significado.
 </p>
 <p>
-<img src="/images/book_online.png" align="right" style="margin-left: 5px;">
-<img src="/images/book_es.gif" align="right" style="margin-left: 5px;">
+<img src="/images/book_online.png" align="right" style="margin-left: 5px;" />
+<img src="/images/book_es.gif" align="right" style="margin-left: 5px;" />
 Los niños y los maestros pueden usar los enlaces de letras de muchas maneras: para
 etiquetar el trabajo artístico y los efectos personales de los niños; para identificar
 a los niños en los carteles, las listas y los mensajes de la clase, y para crear
@@ -53,5 +53,5 @@ con los nombres de los niños</i>. Para saber más del crecimiento de la comunic
 el idioma y la lectoescritura en los bebés y niños pequeños, consulte <i>Infant-Toddler
 Letter Links: Children’s Names as Meaningful Environmental Print</i> de Christine
 Snyder. Para obtener más información sobre el contenido de estos libros y sobre
-cómo pedirlos, haga clic en <a href="resources">Recursos</a> en el menú.
+cómo pedirlos, haga clic en <b>Recursos</b> en el menú de arriba.
 </p>

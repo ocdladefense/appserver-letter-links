@@ -1,5 +1,5 @@
 <div class="title">ABOUT LETTER LINKS</div>
-<br>
+<br />
 <b>What are letter links?</b>
 <p>
 The Letter Links name learning system pairs a child’s printed nametag with a letter-linked
@@ -16,8 +16,8 @@ and the sounds of speech are connected. Children also build phonological awarene
 — the ability to attend to the sounds of language as distinct from its meaning.
 </p>
 <p>
-<img src="images/book_online.png" align="right" style="margin-left: 5px;">
-<img src="images/book.gif" align="right" style="margin-left: 5px;">
+<img src="./src/about/images/book_online.png" align="right" style="margin-left: 5px;" />
+<img src="./src/about/images/book.gif" align="right" style="margin-left: 5px;" />
 Letter links can be used by children and teachers in many ways: to label children’s
 artwork and belongings in the classroom; to identify children in classroom signs,
 lists, and messages; and to create fun and engaging classroom literacy activities.
@@ -38,7 +38,6 @@ or the Spanish version, <i>Enlaces de letras: Aprendizaje del alfabeto con los n
 de los niños</i>. For more on how Letter Links supports infants’ and toddlers’
 communication, language, and literacy growth, please see <i>Infant-Toddler Letter Links:
 Children’s Names as Meaningful Environmental Print</i> by Christine Snyder. For more information
-on the content of these books and how to order them, click on <a href="resources">
+on the content of these books and how to order them, click on <a href="Resources.aspx">
 Resources</a> in the menu bar above.
 </p>
-<div class="clear"></div>
