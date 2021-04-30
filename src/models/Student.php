@@ -1,0 +1,71 @@
+<?php
+
+class Student {
+
+    private $name;
+
+    private $id = "stud6+568778456";
+
+    private $letterLinkImageId = "img152h448448d115";
+
+    private $letterLinkImageUrl;
+
+    public function __construct($name, $id = null){
+
+        $this->name = $name;
+        $this->id = $id;
+    }
+
+    public function setId($studentId){
+
+        $this->id = $studentId;
+    }
+
+    public function setLetterLinkImageId($id){
+
+        $this->letterLinkImageId = $id;
+    }
+
+    public function setLetterLinkImageUrl($url){
+
+        $this->letterLinkImageUrl = $url;
+    }
+
+    public function getName(){
+
+        return $this->name;
+    }
+
+    public function getId(){
+
+        return $this->id;
+    }
+
+    // soundex  
+    public function getLetterSound($algo = "FirstTwo"){
+
+        return strtolower(substr($this->name, 0, 2));
+    }
+
+    public function getLetterLinkImageId(){
+
+        return $this->letterLinkImageId;
+    }
+
+    public function getLetterLinkImageUrl(){
+
+        return $this->letterLinkImageUrl;
+    }
+
+    public function __toJson(){
+
+        $student = array(
+            "name"      => $this->name,
+            "id"        => $this->id,
+            "letterLinkId" => $this->letterLinkId,
+            "letterLinkImageUrl"    => $this->letterLinkImageUrl
+        );
+
+        return $student;
+    }
+}
