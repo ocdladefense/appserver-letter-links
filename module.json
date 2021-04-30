@@ -54,6 +54,10 @@
 			"callback": "updateStudent",
 			"content-type": "text/html"	
 		},
+		"student/%id/delete":{
+			"callback": "deleteStudent",
+			"content-type": "text/html"	
+		},
 		"test/soundex":{
 			"callback": "testSoundex",
 			"content-type": "text/html"	

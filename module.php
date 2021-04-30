@@ -139,11 +139,16 @@ class LetterLinksModule extends Module
 	public function updateStudent($studentId){
 
 		$student = new Student("Joey Johnson");
-		$student->setLetterLinkImageUrl(PictureManager::getImage($letterSound));
+		$student->setLetterLinkImageUrl(PictureManager::getImage($student->getLetterSound()));
 
 		$tpl = new Template("student-form");
 		$tpl->addPath(__DIR__ . "/templates");
 
 		return $tpl->render(array("student" => $student));
+	}
+
+	public function deleteStudent(){
+
+		return "Student would have been deleted and the user would be redirected to the list.";
 	}
 }
