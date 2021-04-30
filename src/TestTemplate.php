@@ -6,7 +6,7 @@ class TestTemplate extends Template {
 		private $css = array(
 			array(
 				"active" => true,
-				"href" => "/modules/appserver-letter-links/assets/css/styles.css"
+				"href" => "/modules/appserver-letter-links/css/default.css"
 			)
 		);
 		
@@ -18,7 +18,7 @@ class TestTemplate extends Template {
 
 
 		private $module = array(
-			"module.js"
+			"sidebar.js"
 		);
 
 
@@ -37,7 +37,7 @@ class TestTemplate extends Template {
 				$scripts [] = array("src" => $name);			
 			}
 			foreach($this->module as $name) {
-				$scripts [] = array("src" => "/modules/appserver-letter-links/assets/js/".$name);			
+				$scripts [] = array("src" => "/modules/appserver-letter-links/js/".$name);			
 			}
 			
 			
