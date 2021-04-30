@@ -16,15 +16,13 @@ class LetterLinksModule extends Module
 		$language = getDefaultLanguage();
 		$content = t($page,$language,$loadFromFile);
 
-		$tpl = new Template("page");
+		$tpl = new TestTemplate("page");
 
 		$tpl->addPath(__DIR__ . "/templates");
 
-
-		return $tpl->render(array(
-			"content" => $content,
-			"page" => $page
-		));
+		$tpl->bind("content",$content);
+		$tpl->bind("page",$page);
+		return $tpl;
 	}
 
 	public function login()
