@@ -44,7 +44,7 @@ class PictureManager {
     public static function getImage($params){
         
         $imageAlgorithim = "FirstTwo";
-        $image = $imageAlgorithim::getPictures($params);
+        return $imageAlgorithim::getImage($params);
         
     }
 
