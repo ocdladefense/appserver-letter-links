@@ -163,6 +163,45 @@ class LetterLinksModule extends Module
 
 	}
 
+	public function testSoundex(){
+
+		$nameCodes = array(
+			"Trevor"	=>	soundex("trevor"),
+			"Thomas"	=>	soundex("thomas"),
+			"Steve"	=>	soundex("steve"),
+			"Sarah"	=>	soundex("sarah"),
+			"Gino"	=>	soundex("gino"),
+			"George"	=>	soundex("george"),
+			"Mike"	=>	soundex("mike"),
+			"Malory"	=>	soundex("malory"),
+			"Jose"	=>	soundex("jose"),
+			"John"	=>	soundex("john"),
+			"Jenny" => soundex("jenny"),
+			"Juanita" => soundex("juanita"),
+			"Guy"	=> soundex("guy")
+		);
+
+		$objectCodes = array(
+			"trap"	=>	soundex("trap"),
+			"train"	=>	soundex("train"),
+			"top"	=>	soundex("top"),
+			"star"	=>	soundex("star"),
+			"jeans"	=>	soundex("jeans"),
+			"Mittens"	=>	soundex("mittens"),
+			"Major"	=>	soundex("major"),
+			"hose"	=>	soundex("hose"),
+			"Giant"	=>	soundex("giant"),
+			"Wand"	=>	soundex("wand")
+		);
+
+		var_dump($nameCodes, $objectCodes);
+
+
+
+
+		exit;
+	}
+
 	/////////////////////////////	Class Managment	/////////////////////////////////////////////////////////////
 	
 	public function getClassList($teacherId){
@@ -179,11 +218,11 @@ class LetterLinksModule extends Module
 	public function getStudentList($classId){
 
 		$studentGroup = new StudentGroupManager($classId);
-		$studentList = $studentGroup->getStudentList();
+		$students = $studentGroup->getStudentList();
 
 		$tpl = new Template("student-list");
 		$tpl->addPath(__DIR__ . "/templates");
 
-		return $tpl->render(array("studentList" => $studentList));
+		return $tpl->render(array("students" => $students));
 	}
 }

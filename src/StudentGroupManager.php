@@ -12,51 +12,24 @@ class StudentGroupManager {
     public function getStudentList(){
 
         $students = array(
-            array(
-                "name" => "Joey Johnson",
-                "image"=> "a54s687x4894189"
-            ),            array(
-                "name" => "Timmy Dalton",
-                "image"=> "/modules/letter-links/content/images/en/D/D-Dewan/dalmatian.jpg"
-            ),            array(
-                "name" => "Debby Sue",
-                "image"=> "/modules/letter-links/content/images/en/D/D-Dewan/dalmatian.jpg"
-            ),            array(
-                "name" => "Curly Sue",
-                "image"=> "/modules/letter-links/content/images/en/D/D-Dewan/dalmatian.jpg"
-            ),            array(
-                "name" => "Suzie Que",
-                "image"=> "/modules/letter-links/content/images/en/D/D-Dewan/dalmatian.jpg"
-            ),            array(
-                "name" => "Hoody Hoo",
-                "image"=> "/modules/letter-links/content/images/en/D/D-Dewan/dalmatian.jpg"
-            ),            array(
-                "name" => "Micheal Jordan",
-                "image"=> "/modules/letter-links/content/images/en/D/D-Dewan/dalmatian.jpg"
-            ),            array(
-                "name" => "Steve Smith",
-                "image"=> "/modules/letter-links/content/images/en/D/D-Dewan/dalmatian.jpg"
-            ),            array(
-                "name" => "John Goodman",
-                "image"=> "/modules/letter-links/content/images/en/D/D-Dewan/dalmatian.jpg"
-            ),            array(
-                "name" => "Danny Glover",
-                "image"=> "/modules/letter-links/content/images/en/D/D-Dewan/dalmatian.jpg"
-            )
+            new Student("Joey Johnson"),
+            new Student("Timmy Dalton"),
+            new Student("Debbie Sue"),
+            new Student("Curly Sue"),
+            new Student("Suzie Que"),
+            new Student("Hoodie Hoo"),
+            new Student("Micheal Jordan"),
+            new Student("Steve Smith"),
+            new Student("John Goodman"),
+            new Student("Danny Glover")
         );
 
-        $student = new Student("Joey Johnson");
-        $letterSound = $student->getLetterSound();
-        $image = PictureManager::getImage($letterSound);
+        foreach($students as $student){
 
-        return array(
-            array(
-                "name" => $student->getName(),
+            $letterSound = $student->getLetterSound();
+            $student->setLetterLinkImageUrl(PictureManager::getImage($letterSound));
+        }
 
-                "image" => $image
-            )
-        );
-
-
+        return $students;   // tojson
     }
 }

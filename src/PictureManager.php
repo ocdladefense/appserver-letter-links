@@ -16,6 +16,8 @@ class PictureManager {
 
         if($letter == "D"){
 
+            //var_dump($basePath);exit;
+
             $images = array(
                 "Daisy" => "{$basePath}/daisy.jpg",
                 "Dalmatian" => "{$basePath}/dalmatian.jpg",
@@ -37,9 +39,13 @@ class PictureManager {
 
     // Returns the correct image for the letter sound.
     // Figure out how to incorprate the language and letter.
-    public static function getImage($letterSound, $lang = null, $letter = null){
-
-        return "/modules/letter-links/content/images/en/D/D-Dewan/daisy.jpg";
+    // Will be getting the id of the image and pass that / use it to get he image url.
+    // This funtion can support multiple agorithims for finding the letter link.
+    public static function getImage($params){
+        
+        $imageAlgorithim = "FirstTwo";
+        $image = $imageAlgorithim::getPictures($params);
+        
     }
 
     public static function getPictures2($dir){
