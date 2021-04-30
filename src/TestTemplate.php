@@ -6,7 +6,7 @@ class TestTemplate extends Template {
 		private $css = array(
 			array(
 				"active" => true,
-				"href" => "/modules/appserver-letter-links/css/default.css"
+				"href" => __DIR__.DIRECTORY_SEPARATOR."css".DIRECTORY_SEPARATOR."default.css"
 			)
 		);
 		
@@ -37,7 +37,7 @@ class TestTemplate extends Template {
 				$scripts [] = array("src" => $name);			
 			}
 			foreach($this->module as $name) {
-				$scripts [] = array("src" => "/modules/appserver-letter-links/js/".$name);			
+				$scripts [] = array("src" => __DIR__.DIRECTORY_SEPARATOR."js".DIRECTORY_SEPARATOR.$name);			
 			}
 			
 			
