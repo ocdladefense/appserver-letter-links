@@ -11,7 +11,8 @@
 		"StudentGroupManager.php",
 		"models/Student.php",
 		"models/StudentGroup.php",
-		"models/Teacher.php"
+		"models/Teacher.php",
+		"soundex/FirstTwo.php"
 	],
 	"languages":["en","es"],
 	"routes": {
@@ -47,6 +48,10 @@
 		},
 		"classes/%cId/students":{
 			"callback": "getStudentList",
+			"content-type": "text/html"	
+		},
+		"test/soundex":{
+			"callback": "testSoundex",
 			"content-type": "text/html"	
 		}
     }
