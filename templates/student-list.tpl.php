@@ -87,7 +87,7 @@
             <div id="student-info" class="item-info">
                 <label><?php print $student->getName(); ?></label><br />
                 <a href="/student/a125545852256gv5f4/update">Update Student</a><br />
-                <a href="">Delete Student</a><br />
+                <a href="/student/azx255225563256mkj/delete">Delete Student</a><br />
             </div>
 
             <div class="checkbox">
