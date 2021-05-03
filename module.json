@@ -16,12 +16,22 @@
 	],
 	"languages":["en","es"],
 	"routes": {
+		"letterlinks": {
+			"callback": "showHome",
+			"content-type": "text\/html"
+		},
 		"letterlinks/content/%page": {
 			"callback": "showPage",
 			"content-type": "text\/html"
 		},
 		"letterlinks/login": {
 			"callback": "login",
+			"content-type": "text\/html",
+			"access":"is_authenticated",
+			"authorization":"webserver"
+		},
+		"letterlinks/login2": {
+			"callback": "test",
 			"content-type": "text\/html"
 		},
 		"letterlinks/logout": {
@@ -32,12 +42,6 @@
 			"callback": "forgotPassword",
 			"content-type": "text\/html"
 		},
-		"letterlinks/login2": {
-			"callback": "test",
-			"content-type": "text\/html",
-			"access":"is_authenticated",
-			"authorization":"webserver"
-		},
 		"pictures/%lang/%letter/%sound":{
 			"callback": "getPictures",
 			"content-type": "text/html"	
@@ -45,6 +49,12 @@
 		"teachers/%tId/classes":{
 			"callback": "getClassList",
 			"content-type": "text/html"	
+		},
+		"my-account":{
+			"callback": "getMyAccount",
+			"content-type": "text/html",
+			"access":"is_authenticated",
+			"authorization":"webserver"
 		},
 		"classes/%cId/students":{
 			"callback": "getStudentList",
@@ -54,5 +64,5 @@
 			"callback": "testSoundex",
 			"content-type": "text/html"	
 		}
-    }
+	}
 }

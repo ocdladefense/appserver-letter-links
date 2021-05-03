@@ -13,17 +13,28 @@ class LetterLinksModule extends Module
 
 	public function showPage($page){
 		$loadFromFile = true;
-		$language = getDefaultLanguage();
+		$language = getDefaultLanguage(); // Should not be here; t() should figure this out.
 		$content = t($page,$language,$loadFromFile);
 
-		$tpl = new TestTemplate("page");
+
+
+		$tpl = new Template("page");
 
 		$tpl->addPath(__DIR__ . "/templates");
 
-		$tpl->bind("content",$content);
-		$tpl->bind("page",$page);
-		return $tpl;
+
+		
+		return $tpl->render( array(
+			"content" => $content
+		));
 	}
+	
+	
+	public function showHome($page = "about"){
+		return $this->showPage($page);
+	}
+	
+	
 
 	public function login()
 	{
@@ -123,6 +134,11 @@ class LetterLinksModule extends Module
 		$tpl->addPath(__DIR__ . "/templates");
 
 		return $tpl->render(array("classList" => $classList));
+	}
+	
+	public function getMyAccount($teacherId = "123"){
+
+		return $this->getClassList($teacherId);
 	}
 
 	public function getStudentList($classId){
