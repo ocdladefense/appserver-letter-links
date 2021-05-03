@@ -4,7 +4,7 @@ class FirstTwo {
 
     public static function getImage($letterSound){
         
-        $basePath = "../modules/letter-links/content/prototypeImages";
+        $basePath = "../modules/appserver-letter-links/content/prototypeImages";
 
         $filenames = scandir($basePath);
 

@@ -1,5 +1,4 @@
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+
 
 <div id="mySidenav" class="sidenav">
   <div id="title">LETTER<br/>LINKS</div>
@@ -23,16 +22,11 @@
 <span id="openbtn" style=" display:none; font-size:20pt; cursor:pointer" onclick="openNav('40%')">&#9776;</span>
 
 <div id="main">
-  <?php echo($content); ?>
+  <?php echo $content; ?>
 </div>
-<div class="footer">
-    <a href="terms"><?php echo(t("footer_terms"));?></a>&nbsp;
-    <a href="contact"><?php echo(t("footer_contact"));?></a>&nbsp;
-    <a href="policy"><?php echo(t("footer_policy"));?></a>&nbsp;
-    <a href="#"><?php echo(t("footer_store"));?></a>&nbsp;
-</div>
-<script>
 
-</script>
+
+
+
 
 
