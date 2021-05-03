@@ -60,7 +60,7 @@
 </style>
 
 <div id="list-header" class="list-header">
-    <h1>Hello "Teacher Name", here are your students for Daily Morning Class 1</h1><br />
+    <h1>Hello José, here are your students for AM Class 1</h1><br />
 </div>
 
 <div id="form-container">
