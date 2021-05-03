@@ -84,45 +84,6 @@ class LetterLinksModule extends Module
 
 	}
 
-	public function testSoundex(){
-
-		$nameCodes = array(
-			"Trevor"	=>	soundex("trevor"),
-			"Thomas"	=>	soundex("thomas"),
-			"Steve"	=>	soundex("steve"),
-			"Sarah"	=>	soundex("sarah"),
-			"Gino"	=>	soundex("gino"),
-			"George"	=>	soundex("george"),
-			"Mike"	=>	soundex("mike"),
-			"Malory"	=>	soundex("malory"),
-			"Jose"	=>	soundex("jose"),
-			"John"	=>	soundex("john"),
-			"Jenny" => soundex("jenny"),
-			"Juanita" => soundex("juanita"),
-			"Guy"	=> soundex("guy")
-		);
-
-		$objectCodes = array(
-			"trap"	=>	soundex("trap"),
-			"train"	=>	soundex("train"),
-			"top"	=>	soundex("top"),
-			"star"	=>	soundex("star"),
-			"jeans"	=>	soundex("jeans"),
-			"Mittens"	=>	soundex("mittens"),
-			"Major"	=>	soundex("major"),
-			"hose"	=>	soundex("hose"),
-			"Giant"	=>	soundex("giant"),
-			"Wand"	=>	soundex("wand")
-		);
-
-		var_dump($nameCodes, $objectCodes);
-
-
-
-
-		exit;
-	}
-
 	/////////////////////////////	Class Managment	/////////////////////////////////////////////////////////////
 	
 	public function getClassList($teacherId){
@@ -154,5 +115,41 @@ class LetterLinksModule extends Module
 		$tpl->addPath(__DIR__ . "/templates");
 
 		return $tpl->render(array("students" => $students));
+	}
+
+	public function updateStudentForm($id){
+
+		$student = new Student("Joey Johnson");
+		$student->setLetterLinkImageUrl(PictureManager::getImage($student->getLetterSound()));
+
+		//var_dump($student);exit;
+
+		$tpl = new Template("student-form");
+		$tpl->addPath(__DIR__ . "/templates");
+
+		return $tpl->render(array("student" => $student));
+	}
+
+	public function updateStudent(){
+
+		$req = $this->getRequest();
+		$formData = $req->getBody();
+
+		$files = $req->getFiles();
+
+		$student = new Student($formData->name);
+		$student->setLetterLinkCaption($formData->caption);
+		$student->setLetterLinkImageUrl($formData->letterLinkUrl);
+
+		if($files->size() > 0){
+
+			$pathToImage = "/content/uploads/" . $files->getFirst()->getName();
+			$student->setLetterLinkImageUrl($pathToImage);
+		}
+
+		$tpl = new Template("student-form");
+		$tpl->addPath(__DIR__ . "/templates");
+
+		return $tpl->render(array("student" => $student));
 	}
 }

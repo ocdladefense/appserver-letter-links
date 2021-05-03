@@ -16,32 +16,32 @@ class ClassManager {
         $classes = array(
             array(
                 "name"  => "Daily Morning Class 1",
-                "image" => "/modules/appserver-letter-links/content/images/en/D/D-Dewan/daisy.jpg",
+                "image" => module_path() . "/content/images/en/D/D-Dewan/daisy.jpg",
                 "imageName" => "Daisy"
             ),
             array(
                 "name"  => "Daily Morning Class 2",
-                "image" => "/modules/appserver-letter-links/content/images/en/D/D-Dewan/dalmatian.jpg",
+                "image" => module_path() . "/content/images/en/D/D-Dewan/dalmatian.jpg",
                 "imageName" => "Dalmatian"
             ),
             array(
                 "name"  => "Daily Afternoon Class 1",
-                "image" => "/modules/appserver-letter-links/content/images/en/D/D-Dewan/dinosaur.jpg",
+                "image" => module_path() . "/content/images/en/D/D-Dewan/dinosaur.jpg",
                 "imageName" => "Dinosaur"
             ),
             array(
                 "name"  => "Daily Afternoon Class 2",
-                "image" => "/modules/appserver-letter-links/content/images/en/D/D-Dewan/dog2.jpg",
+                "image" => module_path() . "/content/images/en/D/D-Dewan/dog2.jpg",
                 "imageName" => "Dog"
             ),
             array(
                 "name"  => "Daily Evening Class 1",
-                "image" => "/modules/appserver-letter-links/content/images/en/D/D-Dewan/dolphin.jpg",
+                "image" => module_path() . "/content/images/en/D/D-Dewan/dolphin.jpg",
                 "imageName" => "Dolphin"
             ),
             array(
                 "name"  => "Daily Evening Class 2",
-                "image" => "/modules/appserver-letter-links/content/images/en/D/D-Dewan/donut.jpg",
+                "image" => module_path() . "/content/images/en/D/D-Dewan/donut.jpg",
                 "imageName" => "Donut"
             )
         );
