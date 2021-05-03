@@ -26,7 +26,7 @@
 
             <div id="class-info" class="class-info">
                 <label><?php print $cl["name"]; ?></label><br />
-                <a href="/classes/someId/students">edit student list</a><br />
+                <a href="/classes/class-123abc/students">edit student list</a><br />
                 <a href="">edit this class</a>
             </div>
         </div>
