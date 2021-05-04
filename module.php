@@ -86,7 +86,7 @@ class LetterLinksModule extends Module
 
 	/////////////////////////////	Class Managment	/////////////////////////////////////////////////////////////
 	
-	public function getMyAccount($teacherId = "123"){
+	public function getMyAccount($teacherId){
 
 		return $this->getClassList($teacherId);
 	}
@@ -95,7 +95,8 @@ class LetterLinksModule extends Module
 
 		$api = $this->loadForceApi();
 
-		$query = "SELECT Id, Name, LetterLinkImageURL__c, Teacher__r.Name, Teacher__c FROM StudentGroup__c WHERE Teacher__c = '$teacherId' ORDER BY Name";
+		// Will be ordering by Day__c or something other than name.  Create the field on the class.
+		$query = "SELECT Id, Name, LetterLinkImageURL__c, Teacher__r.Name, Teacher__c FROM Class__c WHERE Teacher__c = '$teacherId' ORDER BY Name";
 		
 		$results = $api->query($query);
 
@@ -125,9 +126,8 @@ class LetterLinksModule extends Module
 	}
 	
 	
-	
 
-
+	//////////////////////////////	Student Managment	/////////////////////////////////////////////////
 
 
 	public function getStudentList($classId){
