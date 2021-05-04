@@ -50,7 +50,7 @@
 			"callback": "getClassList",
 			"content-type": "text/html"	
 		},
-		"my-account":{
+		"my-account/%id":{
 			"callback": "getMyAccount",
 			"content-type": "text/html",
 			"access":"is_authenticated",

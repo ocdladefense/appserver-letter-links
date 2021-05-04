@@ -86,23 +86,47 @@ class LetterLinksModule extends Module
 
 	/////////////////////////////	Class Managment	/////////////////////////////////////////////////////////////
 	
-	public function getClassList($teacherId){
-
-		$cMgr = new ClassManager($teacherId);
-		$classList = $cMgr->getClassList();
-
-		$tpl = new Template("class-list");
-		$tpl->addPath(__DIR__ . "/templates");
-
-		return $tpl->render(array("classList" => $classList));
-	}
-	
-	
-	
 	public function getMyAccount($teacherId = "123"){
 
 		return $this->getClassList($teacherId);
 	}
+
+	public function getClassList($teacherId){
+
+		$api = $this->loadForceApi();
+
+		$query = "SELECT Id, Name, LetterLinkImageURL__c, Teacher__r.Name, Teacher__c FROM StudentGroup__c WHERE Teacher__c = '$teacherId' ORDER BY Name";
+		
+		$results = $api->query($query);
+
+		$classList = array();
+		foreach($results->getRecords() as $class){
+
+			$classList[] = StudentGroup::fromQueryResultRecord($class);  
+		}
+
+		$teacher = $this->getTeacher($teacherId);
+
+		$tpl = new Template("class-list");
+		$tpl->addPath(__DIR__ . "/templates");
+
+		return $tpl->render(array("classList" => $classList, "teacher" => $teacher));
+	}
+
+	public function getTeacher($teacherId){
+
+		$api = $this->loadForceApi();
+
+		$query = "SELECT Id, FirstName, LastName, LetterLinkImageURL__c FROM Contact WHERE Id = '$teacherId'";
+
+		$results = $api->query($query);
+
+		return Teacher::fromQueryResultRecord($results->getRecord(0));
+	}
+	
+	
+	
+
 
 
 
