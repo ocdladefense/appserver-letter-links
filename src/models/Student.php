@@ -10,6 +10,8 @@ class Student {
 
     private $letterLinkImageUrl;
 
+    private $letterLinkCaption;
+
     public function __construct($name, $id = null){
 
         $this->name = $name;
@@ -29,6 +31,11 @@ class Student {
     public function setLetterLinkImageUrl($url){
 
         $this->letterLinkImageUrl = $url;
+    }
+
+    public function setLetterLinkCaption($caption){
+
+        $this->letterLinkCaption = $caption;
     }
 
     public function getName(){
@@ -55,6 +62,15 @@ class Student {
     public function getLetterLinkImageUrl(){
 
         return $this->letterLinkImageUrl;
+    }
+
+    public function getLetterLinkCaption(){
+
+        $urlParts = explode("/", $this->letterLinkImageUrl);
+
+        $caption = $urlParts[count($urlParts) -1];
+
+        return $caption;
     }
 
     public function __toJson(){

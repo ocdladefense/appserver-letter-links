@@ -61,6 +61,10 @@
 			"content-type": "text/html"	
 		},
 		"student/%id/update":{
+			"callback": "updateStudentForm",
+			"content-type": "text/html"	
+		},
+		"student/update":{
 			"callback": "updateStudent",
 			"content-type": "text/html"	
 		},
