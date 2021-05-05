@@ -1,6 +1,14 @@
 
 <style>
-	
+	.image-area{
+		text-align:center;
+	}
+	.image-area button{
+
+		width: 30%;
+		border-radius: 20px;
+		margin: 10px;
+	}
 	.upload {
 		display: none !important;
 	}
@@ -9,19 +17,16 @@
 
 <form enctype="multipart/form-data" id="upload-form" name="upload-form" method="post" action="/student/update" >
 
-	<div class="form-item">
+	<div class="form-item image-area">
 		<img src="<?php print $student->getLetterLinkImageUrl(); ?>" /><br />
-		<a onClick="showUploadForm();">Change Image</a>
+		<label><?php print $student->getLetterLinkCaption(); ?></label><br />
+		<button onClick="showUploadForm();">Upload a new Image</button>
+		<button onClick="showUploadForm();">Select an existing image</button><br />
 	</div>
 
 	<div class="form-item">
 		<label for="Name">Student Name</label><br />
 		<input type="text" name="name" id="name" value="<?php print $student->getName(); ?>" placeholder="Enter student name" />
-	</div>
-
-	<div class="form-item">
-		<label for="Name">Letter Link Caption</label><br />
-		<input type="text" name="caption" id="caption" value="<?php print $student->getLetterLinkCaption(); ?>" placeholder="Enter your picture caption." />
 	</div>
 
 	<input type="hidden" name="recordId" id="recordId" value="<?php print $student->getId(); ?>" />

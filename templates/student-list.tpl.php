@@ -64,6 +64,7 @@
 
 
         <div id="student-item" class="list-item <?php print $row; ?>">
+        
             <input type="hidden" name="studentId" value="<?php print $student->getId(); ?>" />
 
             <label><?php print $student->getName(); ?></label><br />

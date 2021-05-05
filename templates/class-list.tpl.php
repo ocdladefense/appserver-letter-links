@@ -18,18 +18,11 @@
         background-color: lightblue;
     }
     .list-item{
-        padding: 3px;
-    }
-    .item-info{
+        text-align: center;
+        margin: 0.5%;
         display: inline-block;
-        float: right;
-    }
-    .item-info a{
-        float: right;
-    }
-    .checkbox{
-        display: inline;
-        margin-left: 10px;
+        padding: 10px;
+        width: 17%;
     }
     h1{
         font-size: 5Vmin;
@@ -37,29 +30,19 @@
     .button-right{
         margin-left: 40px;
     }
+    .caption{
+        display: block;
+    }
 
     @media only screen and (max-width:750px){
 
-        img{
-            max-height: 21Vmin;
-        }
-        .item-image{
-            max-width:30%;
-        }
-        .checkbox{
-            margin: 0 0 0 10%   ;
-        }
-    }
-
-    @media only screen and (min-width:1100px){
-
         .list-item{
-            width: 20%;
-            margin: 0.5%;
-            display: inline-block;
-            padding: 5px;
+            display: block;
+            width: unset;
         }
     }
+
+    @media only screen and (min-width:1100px){}
 </style>
 
 <div id="list-header" class="list-header">
@@ -71,19 +54,16 @@
     <?php $row = "even-row"; ?>
     <?php foreach($classList as $class) : ?>
 
-        <div id="list-item" class="list-item <?php print $row; ?>">
-            <input type="hidden" name="Id" value="<?php print $class->getId(); ?>" />
+        <div id="student-item" class="list-item <?php print $row; ?>">
+        
+            <input type="hidden" name="studentId" value="<?php print $class->getId(); ?>" />
 
-            <div id="item-image" class="item-image">
-                Caption<br />
-                <img class="image" src="<?php print $class->getLetterLinkImageUrl(); ?>" />
-            </div> 
+            <label><?php print $class->getName(); ?></label><br />
+            <img src="<?php print $class->getLetterLinkImageUrl(); ?>" />
+            <label class="caption">Caption</label><br />
 
-            <div id="item-info" class="item-info">
-                <label><?php print $class->getName(); ?></label><br />
-                <a href="/classes/class-123abc/students">edit student list</a><br />
-                <a href="">edit this class</a>
-            </div>
+            <a href="/classes/class-123abc/students">edit student list</a><br />
+            <a href="">edit this class</a>
 
         </div>
 
