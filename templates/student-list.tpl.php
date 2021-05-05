@@ -22,6 +22,7 @@
         margin: 0.5%;
         display: inline-block;
         padding: 10px;
+        width: 17%;
     }
     h1{
         font-size: 5Vmin;
@@ -33,7 +34,13 @@
         display: block;
     }
 
-    @media only screen and (max-width:750px){}
+    @media only screen and (max-width:750px){
+
+        .list-item{
+            display: block;
+            width: unset;
+        }
+    }
 
     @media only screen and (min-width:1100px){}
 </style>
@@ -63,8 +70,8 @@
             <img src="<?php print $student->getLetterLinkImageUrl(); ?>" />
             <label class="caption">Caption</label><br />
 
-            <a href="/student/a125545852256gv5f4/update">Update</a><br />
-            <a href="/student/azx255225563256mkj/delete">Delete</a><br />
+            <a href="/student/a125545852256gv5f4/update">Update</a>
+            <a href="/student/azx255225563256mkj/delete">Delete</a>
             
             <div>
                 <input type="checkbox" value="add to print list" />
