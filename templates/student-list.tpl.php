@@ -1,49 +1,3 @@
-<style>
-    .list-header{
-        margin: 10px 0 25px 0;
-    }
-    .item-image{
-        display: inline-block;
-    }
-    img{
-        max-height: 100px;
-    }
-    a{
-        text-decoration: none;
-    }
-    .even-row{
-        background-color: aquamarine;
-    }
-    .odd-row{
-        background-color: lightblue;
-    }
-    .list-item{
-        text-align: center;
-        margin: 0.5%;
-        display: inline-block;
-        padding: 10px;
-        width: 17%;
-    }
-    h1{
-        font-size: 5Vmin;
-    }
-    .button-right{
-        margin-left: 40px;
-    }
-    .caption{
-        display: block;
-    }
-
-    @media only screen and (max-width:750px){
-
-        .list-item{
-            display: block;
-            width: unset;
-        }
-    }
-
-    @media only screen and (min-width:1100px){}
-</style>
 
 <div id="list-header" class="list-header">
     <h1>Hello José, here are your students for AM Class 1</h1><br />
@@ -64,7 +18,7 @@
 
 
         <div id="student-item" class="list-item <?php print $row; ?>">
-        
+
             <input type="hidden" name="studentId" value="<?php print $student->getId(); ?>" />
 
             <label><?php print $student->getName(); ?></label><br />
@@ -85,3 +39,5 @@
     <?php endforeach ?>
 
 </div>
+
+<link rel="stylesheet" type="text/css" href="<?php print module_path(); ?>/assets/css/lists.css" />
