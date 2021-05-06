@@ -1,0 +1,269 @@
+/*
+Toggle Radios v1.1
+by Adam Culpepper | @adamculpepper
+https://github.com/adamculpepper/toggle-radios
+*/
+
+/* Customizable styles */
+
+/* Colors: Default (blue) */
+.toggle-radio {background:#f5f5f5; border:1px solid #ccc;}
+.toggle-radio > input:checked + label {background:#334bb3; color:#fff}
+.toggle-radio > input + label:not(:last-of-type) {border-right:1px solid #ccc;}
+
+/* Rounded corners */
+.toggle-radio {border-radius:4px;}
+
+/* //////////////////////////
+CORE STYLES BELOW - NO TOUCHY
+////////////////////////// */
+.toggle-radio {display:inline-flex;}
+.toggle-radio > input[type='radio'] {display:none;}
+.toggle-radio > input[disabled] + label {opacity:0.50;}
+.toggle-radio > input[disabled] + label:hover {cursor:not-allowed;}
+.toggle-radio > input + label {display:inline-block; margin-bottom:0; padding:5px 10px; float:left; cursor:pointer;}
+
+/* Transitions */
+.toggle-radio > input:checked + label {transition:background 300ms linear;}
+
+/* //////////////////////////
+CORE STYLES ABOVE - NO TOUCHY
+////////////////////////// */
+
+/* Style: Rounded */
+.toggle-radio[data-style='rounded'] {border-radius:500px;}
+
+/* Style: Square */
+.toggle-radio[data-style='square'] {border-radius:0;}
+
+/* Color: Red */
+.toggle-radio[data-color='red'] > input:checked + label		{background:rgba(231, 76, 60, 0.60);}
+
+/* Color: Orange */
+.toggle-radio[data-color='orange'] > input:checked + label	{background:rgba(230, 126, 34, 0.60);}
+ 
+ /* Color: Yellow */
+.toggle-radio[data-color='yellow'] > input:checked + label	{background:rgba(241, 196, 15, 0.60);}
+
+/* Color: Green */
+.toggle-radio[data-color='green'] > input:checked + label	{background:rgba(46, 204, 113, 0.60);}
+
+/* Color: Blue */
+.toggle-radio[data-color='blue'] > input:checked + label	{background:rgba(52, 152, 219, 0.60);}
+
+/* Color: Purple */
+.toggle-radio[data-color='purple'] > input:checked + label	{background:rgba(155, 89, 182, 0.60);}
+
+/* Color: Gray */
+.toggle-radio[data-color='gray'] > input:checked + label	{background:rgba(85, 85, 85, 0.60);}
+
+
+
+
+.open-until-filled #closingDate {
+    display: none;
+}
+
+.nameTitle{
+    padding-bottom: 20px;
+}
+
+#editStudent{
+    font-size: x-large;
+    color: rgb(51 75 179);
+}
+
+#editName{
+    display:none;
+}
+
+.name{
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 0em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+    text-align: center;
+    color: #334bb3;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+
+
+label {
+    color: rgba(30,30,30,0.7);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form-item {
+    margin-top: 27px;
+}
+
+.has-attachment #uploader {
+    display:none;
+}
+
+#existing-attachments{
+    display:none;
+}
+.has-attachment #existing-attachments{
+    
+    display:block;
+}
+
+button, input {
+    overflow: visible;
+    padding: 8px;
+    color: rgba(30,30,30,0.9);
+}	
+
+
+input[type="submit"],
+input[type="file"] {
+    display: block;
+    padding: 4px;
+}
+
+input[type=checkbox], input[type=radio] {
+        box-sizing: border-box;
+        padding: 0;
+        width: auto;
+}
+
+
+@media screen and (min-width:800px) {
+    .label {
+        display:none;
+    }
+    
+    .form-item {
+        max-width: 50%;
+    }
+}
+
+/* Drag And Drop Styles */
+.highlight {
+
+    background-color: lightgreen !important;
+}
+.hidden {
+
+    display: none !important;
+}
+/*  end of trevor styles*/
+
+
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image: linear-gradient(to right top, #2d0036, #4f015b, #730283, #9a02ac, #C400D7);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	min-height: 100vh;
+	margin: 0;
+}
+
+h3 {
+	margin: 10px 0;
+}
+
+h6 {
+	margin: 5px 0;
+	text-transform: uppercase;
+}
+
+p {
+	font-size: 14px;
+	line-height: 21px;
+}
+
+.card-container {
+    background-color: hsl(196deg 100% 45% / 14%);
+    border-radius: 25px;
+    box-shadow: 10px 10px 15px rgb(0 0 0 / 35%);
+    color: #848486;
+    padding: 30px 0 0;
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    margin: 5px 0;
+    overflow: hidden;
+}
+
+.top-label{
+    position: absolute;
+    top: 20px;
+
+    z-index: 0;
+    font-weight: bold;
+}
+
+.card-container .student {
+    color: hsl(127deg 75% 56%);
+    text-shadow: 1px 1px 3px black;
+    background-color: red;
+    border-radius: 3px;
+    font-size: 14px;
+    padding: 7px 7px;
+    left: 10px;
+}
+
+.card-container img {
+    border: 1px solid #012169;
+    border-radius: 20%;
+    padding: 7px;
+    height: 150px;
+    width: 150px;
+}
+
+button.primary {
+	background-color: #C400D7;
+	border: 1px solid #C400D7;
+	border-radius: 3px;
+	color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-weight: 500;
+	padding: 10px 25px;
+}
+
+button.primary.ghost {
+	background-color: transparent;
+	color: #C400D7;
+}
+
+.skills {
+	background-color: #1F1A36;
+	text-align: left;
+	padding: 15px;
+	margin-top: 30px;
+}
+
+.skills ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.skills ul li {
+	border: 1px solid #2D2747;
+	border-radius: 2px;
+	display: inline-block;
+	font-size: 12px;
+	margin: 0 7px 7px 0;
+	padding: 7px;
+}

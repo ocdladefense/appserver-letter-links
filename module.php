@@ -151,6 +151,11 @@ class LetterLinksModule extends Module
 		$tpl = new Template("student-form");
 		$tpl->addPath(__DIR__ . "/templates");
 
+		//$tpl->addScripts(array(array('src' => module_path()."/assets/js/student.js")));
+		// $tpl->addStyles(array(
+		// 	"active" => true,
+		// 	"href" => getPathToModules().module_path()."/assets/css/student.css"
+		// ));
 		return $tpl->render(array("student" => $student));
 	}
 

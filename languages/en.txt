@@ -4,6 +4,9 @@ menu_help,help
 menu_resources,resources
 menu_activities,activities
 menu_login,login
+language,language
+english,english
+spanish,spanish
 dropdown_sufix,languages
 footer_terms,terms&nbsp;&&nbsp;conditions
 footer_contact,contact&nbsp;us
