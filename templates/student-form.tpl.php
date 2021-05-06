@@ -1,3 +1,21 @@
+<script type="text/javascript">
+	function editName(){
+		document.getElementById("editName").style.display='block';
+		document.getElementById("editStudent").style.display='none';
+		document.getElementById("pictureBtn").style.display='none';
+		document.getElementById("cancelStudent").style.display='inline-block';
+		document.getElementById("studentForm").style.display='unset';
+		
+	}
+	function cancel(){
+		document.getElementById("editName").style.display='none';
+		document.getElementById("editStudent").style.display='unset';
+		document.getElementById("pictureBtn").style.display='block';
+		document.getElementById("cancelStudent").style.display='none';
+		document.getElementById("studentForm").style.display='none';
+	}
+</script>
+
 
 <style>
 	.image-area{
@@ -21,33 +39,49 @@
 		<span class="student"><i class="fas fa-apple-alt"></i> Student</span>
 	</div>
 	<div class="nameTitle">
-	<script type="text/javascript">
-		function editName(){
-			document.getElementById("editName").style.display='block';
-			document.getElementsByClassName("nameTitle")[0].style.display='none';
-		}
-	</script>
-		<h1 style="display: inline-block;"><?php print $student->getName(); ?> </h1><i id="editStudent" class="fas fa-pencil-alt" onclick="editName();"></i>
+		<h1 style="display: inline-block;"><?php print $student->getName(); ?> </h1>
+		<div id="editStudent" onclick="editName();"><i style="font-size: x-large;" class="fas fa-pencil-alt" ></i>edit</div>
+		<div id="cancelStudent" onclick="cancel();"><i  style="font-size: x-large;" class="fa fa-times" aria-hidden="true"></i>cancel</div>
 	</div>
+	<div style="width: 100%;">
+		<img src="<?php print $student->getLetterLinkImageUrl(); ?>" alt="student-img">
+		<div class="buttons" id="pictureBtn">
+			<button class="primary ghost">
+				<i class="fas fa-image"></i> Change
+			</button>
+		</div>
+	</div>
+    
+
 	<div id="editName">
 		<label for="Name">Student Name</label><br />
 		<input type="text" class="name" name="name" id="name" value="<?php print $student->getName(); ?>" placeholder="Change Name Here:" />
 	</div>
 
-	
-    <img src="<?php print $student->getLetterLinkImageUrl(); ?>" alt="student-img">
-
-    <h5><?php print t("language")?></h5>
-	<div class="toggle-radio">
-		<input type="radio" name="default" id="default_Option1" value="Option1">
-		<label for="default_Option1"><?php print t("english")?></label>
-
-		<input type="radio" name="default" id="default_Option2" value="Option2" checked>
-		<label for="default_Option2"><?php print t("spanish")?></label>
-
-		<!-- <input type="radio" name="default" id="default_Option3" value="Option3">
-		<label for="default_Option3">Option 3</label> -->
+	<label for="Name" style="padding-top: 10px; padding-bottom: 10px; text-transform: capitalize;"><?php print t("language")?>: <?php print "default language"?></label>
+	<div id="studentForm" style="display: none; padding:10px 0px 10px 0px;">
+	</br>
+		<div class="toggle-radio">
+			<input type="radio" name="default" id="default_Option1" value="Option1" checked>
+			<label for="default_Option1"><?php print "default language"?></label>
+			<input type="radio" name="default" id="default_Option2" value="Option2" >
+			<label for="default_Option2"><?php print t("spanish")?></label>
+			<!-- <input type="radio" name="default" id="default_Option3" value="Option3">
+			<label for="default_Option3">Option 3</label> -->
+		</div>
+		<div class="buttons" style="padding-top: 20px;">
+			<button class="primary">
+				Submit
+			</button>
+			<!-- <button class="primary">
+				Cancel
+			</button> -->
+		</div>
 	</div>
+
+
+
+
     <!-- <p>User interface designer and <br> front-end developer</p>
     <div class="buttons">
         <button class="primary">
@@ -58,13 +92,12 @@
         </button>
     </div> -->
     <div class="skills">
-        <h6>Classes:</h6>
+        <h5>Classes:</h5>
         <ul style="font-size: 13pt;">
-            <li>Class1</li>
+            <li>Class afternoon</li>
             <li>Class2 morning</li>
-            <li>Class3 that is the same as class5 but no stinky jeff</li>
-            <li>Class4 but similar to class2 but without jake</li>
-            <li>Class5 class but everyone gets spanked</li>
+            <li>Class3 midnight</li>
+            <li>Class twighlight</li>
         </ul>
     </div>
 </div>
