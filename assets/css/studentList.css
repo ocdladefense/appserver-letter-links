@@ -41,7 +41,7 @@
     text-decoration: none;
 }
 
-.card-container img {
+.card-container .classImg img {
     border: 1px solid #012169;
     border-radius: 20%;
     padding: 7px;
@@ -49,7 +49,135 @@
     width: 215px;
 }
 
+.nameTitle{
+    line-height: normal;
 
+}
+
+
+.top-label .fa-search{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card-container .search{
+    color: rgb(106, 147, 209);
+    text-shadow: 0px 0px 2px #8e8b8b;
+    /* background-color: grey; */
+    border-radius: 3px;
+    font-size: 11px;
+    padding: 7px 7px;
+    position: absolute;
+    top: 8px;
+    z-index: 0;
+    right: 0px;
+    text-decoration: none;
+}
+
+.card-container .search:hover {
+    color: rgb(106, 147, 209);
+}
+
+
+/*checklist*/
+
+ul {
+    list-style-type: none;
+  }
+  
+  li {
+    display: inline-block;
+  }
+  
+  input[type="checkbox"][id^="student"] {
+    display: none;
+  }
+  
+  label {
+    border: 1px solid #012169;
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+    position: relative;
+    margin: 10px;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  label::before {
+    background-color: white;
+    color: white;
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    border: 1px solid grey;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 28px;
+    transition-duration: 0.4s;
+    transform: scale(0);
+  }
+  
+  label img {
+    height: 150px;
+    width: 150px;
+    transition-duration: 0.2s;
+    transform-origin: 50% 50%;
+    border-radius: 10px;
+    display: block;
+  }
+  
+  :checked+label {
+    border-color: #ddd;
+  }
+  
+  :checked+label::before {
+    content: "✓";
+    background-color: grey;
+    transform: scale(1);
+  }
+  
+  :checked+label img {
+    transform: scale(0.9);
+    box-shadow: 0 0 5px #333;
+    z-index: -1;
+  }
+
+/*end of checklist*/
+
+
+.student-label{
+    position: relative;
+    top: 45px;
+    right: -69px;
+    z-index: 1;
+}
+
+.student-label .fa-print{
+    color: black;
+    background-color: #eceff2;
+    border-radius: 5px;
+    padding: 10px 10px 10px 10px;
+    font-size: x-large;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.student-caption{
+    color: rgb(51 75 179);
+    font-weight: bold;
+    font-style: italic;
+    display: inline-block;
+}
 
 .list-header{
     margin: 10px 0 25px 0;

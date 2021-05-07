@@ -15,7 +15,7 @@ class Student {
     public function __construct($name, $id = null){
 
         $this->name = $name;
-        $this->id = $id;
+        $this->id = !empty($id) ? $id : "stud6+568778456";
     }
 
     public function setId($studentId){
