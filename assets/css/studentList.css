@@ -1,0 +1,94 @@
+.card-container {
+    background-color: hsl(196deg 100% 45% / 14%);
+    border-radius: 25px;
+    box-shadow: 10px 10px 15px rgb(0 0 0 / 35%);
+    color: #848486;
+    padding: 30px 0 0;
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    margin: auto;
+    overflow: hidden;
+}
+
+.card-container .delete a{
+    color: hsl(0deg 0% 47%);
+    text-shadow: 1px 0px 1px black;
+    /* background-color: grey; */
+    border-radius: 3px;
+    font-size: 11px;
+    padding: 7px 7px;
+    position: absolute;
+    top: 8px;
+    z-index: 0;
+    right: 8px;
+    text-decoration: none;
+}
+
+.card-container .delete:hover {
+    color: red;
+}
+
+.card-container .student {
+    color: #e01a1a;
+    text-shadow: 1px 1px 1px black;
+    font-size: 20px;
+    position: absolute;
+    top: 17px;
+    z-index: 0;
+    left: 12px;
+    text-decoration: none;
+}
+
+.card-container img {
+    border: 1px solid #012169;
+    border-radius: 20%;
+    padding: 7px;
+    height: 215px;
+    width: 215px;
+}
+
+
+
+.list-header{
+    margin: 10px 0 25px 0;
+}
+.item-image{
+    display: inline-block;
+}
+a{
+    text-decoration: none;
+}
+.even-row{
+    background-color: aquamarine;
+}
+.odd-row{
+    background-color: lightblue;
+}
+.list-item{
+    text-align: center;
+    margin: 0.5%;
+    display: inline-block;
+    padding: 10px;
+    width: 17%;
+}
+h1{
+    font-size: 5Vmin;
+}
+.button-right{
+    margin-left: 40px;
+}
+.caption{
+    display: block;
+}
+
+@media only screen and (max-width:750px){
+
+    .list-item{
+        display: block;
+        width: unset;
+    }
+}
+
+@media only screen and (min-width:1100px){}

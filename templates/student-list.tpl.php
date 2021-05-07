@@ -1,3 +1,17 @@
+<div class="card-container">
+    <div class="nameTitle">
+		<h1 style="display: inline-block;">Hello José, here are your students for AM Class 1</h1>
+	</div>
+	<div id="classImg" style="width: 100%; display:none;">
+		<img src="https://letterlinks.highscope.org/Pictures/246_110810103117jaguar.jpg" alt="student-list-img" width="215px" height="215px">
+	</div>
+
+
+</div>
+
+
+
+
 
 <div id="list-header" class="list-header">
     <h1>Hello José, here are your students for AM Class 1</h1><br />
@@ -40,4 +54,5 @@
 
 </div>
 
-<link rel="stylesheet" type="text/css" href="<?php print module_path(); ?>/assets/css/lists.css" />
+<link rel="stylesheet" type="text/css" href="<?php print module_path(); ?>/assets/css/studentList.css" />
+<script src="<?php print module_path(); ?>/assets/js/studentList.js" />

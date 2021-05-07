@@ -4,6 +4,9 @@ menu_help,ayuda
 menu_resources,recursos
 menu_activities,actividades
 menu_login,registrarse
+language,lenguaje
+english,ingles
+spanish,español
 footer_terms,el contrato
 footer_contact,contactarnos
 footer_policy,terminos de privacidad
