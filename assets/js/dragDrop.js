@@ -128,9 +128,6 @@ function appendFileInput(filename){
 
     form.insertBefore(container, form.children[form.children.length -7]);
 
-    let fileUploadButton = document.getElementById("file-upload-button");
-    fileUploadButton.innerText = "hello";
-
     return fileInput;
 }
 
