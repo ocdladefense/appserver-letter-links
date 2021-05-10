@@ -43,6 +43,11 @@ input[type=checkbox], input[type=radio] {
         width: auto;
 }
 
+.upload {
+
+    display: none !important;
+}
+
 
 @media screen and (min-width:800px) {
     .label {
@@ -58,8 +63,4 @@ input[type=checkbox], input[type=radio] {
 .highlight {
 
     background-color: lightgreen !important;
-}
-.hidden {
-
-    display: none !important;
 }

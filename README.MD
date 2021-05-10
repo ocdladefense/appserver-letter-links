@@ -23,3 +23,9 @@ chapter letterlinks chapter pages\
 
 
 
+## Drag and Drop Notes
+If you have "showFileDialog" set to true, you will see the file dialog button for uploading files.
+The buttons on the old form for selecting the file do not work.
+
+
+

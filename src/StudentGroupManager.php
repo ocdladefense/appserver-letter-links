@@ -12,16 +12,16 @@ class StudentGroupManager {
     public function getStudentList(){
 
         $students = array(
-            new Student("Joey Johnson"),
-            new Student("Timmy Dalton"),
-            new Student("Debbie Sue"),
-            new Student("Curly Sue"),
-            new Student("Suzie Que"),
-            new Student("Hoodie Hoo"),
-            new Student("Micheal Jordan"),
-            new Student("Steve Smith"),
-            new Student("John Goodman"),
-            new Student("Danny Glover")
+            new Student("Joey Johnson",1),
+            new Student("Timmy Dalton",2),
+            new Student("Debbie Sue",3),
+            new Student("Curly Sue",4),
+            new Student("Suzie Que",5),
+            new Student("Hoodie Hoo",6),
+            new Student("Micheal Jordan",7),
+            new Student("Steve Smith",8),
+            new Student("John Goodman",9),
+            new Student("Danny Glover",10)
         );
 
         foreach($students as $student){

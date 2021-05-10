@@ -56,6 +56,13 @@
 			"access":"is_authenticated",
 			"authorization":"webserver"
 		},
+		"my-account":{
+			"callback": "testAccount",
+			"content-type": "text/html",
+			"access":"is_authenticated",
+			"authorization":"webserver"
+		}
+		,
 		"classes/%cId/students":{
 			"callback": "getStudentList",
 			"content-type": "text/html"	

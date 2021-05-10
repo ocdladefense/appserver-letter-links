@@ -27,7 +27,10 @@ CORE STYLES BELOW - NO TOUCHY
 .toggle-radio > input:checked + label {transition:background 300ms linear;}
 
 
-
+#stage{
+    
+    background-color:hsl(196deg 100% 45% / 14%);
+}
 
 
 .open-until-filled #closingDate {
@@ -35,7 +38,7 @@ CORE STYLES BELOW - NO TOUCHY
 }
 
 .nameTitle{
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 #editStudent{
@@ -69,7 +72,7 @@ CORE STYLES BELOW - NO TOUCHY
 
 .name{
     display: block;
-    font-size: 1.17em;
+    font-size: 1.9em;
     margin-block-start: 0em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
@@ -80,14 +83,13 @@ CORE STYLES BELOW - NO TOUCHY
     text-align: center;
     color: #334bb3;
     border-radius: 10px;
-    margin-bottom: 5px;
 }
 
 
 
 label {
     color: rgba(30,30,30,0.7);
-    font-size: 14px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -182,17 +184,11 @@ p {
 }
 
 .card-container {
-    background-color: hsl(196deg 100% 45% / 14%);
-    border-radius: 25px;
-    box-shadow: 10px 10px 15px rgb(0 0 0 / 35%);
     color: #848486;
     padding: 30px 0 0;
     position: relative;
     width: 100%;
-    max-width: 900px;
     text-align: center;
-    margin: auto;
-    overflow: hidden;
 }
 
 .top-label .fa-trash-alt{

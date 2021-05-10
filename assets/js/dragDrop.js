@@ -11,8 +11,9 @@ let submitButton = document.getElementById("submit-button");
 uploadOnDrop == true ? submitButton.classList.add("hidden") : submitButton.classList.remove("hidden");
 
 // If the file input element does not already exist, create the element and append it to the form element.
-let fileInput = document.getElementById('Attachments__c[]') != null ? document.getElementById('Attachments__c[]') : appendFileInput();
-includeFileDialog == true ? fileInput.classList.remove("hidden") : fileInput.classList.add("hidden");
+let fileInput = document.getElementById('Attachments__c[]') != null ? document.getElementById('Attachments__c[]') : appendFileInput("rainbow.jpg");
+let fileInputContainer = document.getElementById("file-input-container");
+includeFileDialog == true ? fileInputContainer.classList.remove("hidden") : fileInputContainer.classList.add("hidden");
 
 let primaryList = new DataTransfer();
 
@@ -106,7 +107,7 @@ function updateStatusContainer(container, filenames){
 
 // Create a file input element and insert it into the form before the last element.  Usually a submit button I would think.
 // To do: This should just return the element.  The calling code shoud insert the element.
-function appendFileInput(){
+function appendFileInput(filename){
 
     let fileInput = document.createElement("INPUT");
     fileInput.setAttribute("type", "file");
@@ -115,7 +116,18 @@ function appendFileInput(){
     fileInput.setAttribute("multiple", "true");
     fileInput.classList.add("upload");
 
-    form.insertBefore(fileInput, form.children[form.children.length -1]);
+    let container = document.createElement("div");
+    container.setAttribute("id", "file-input-container");
+    container.classList.add("file-upload-container");
+    container.setAttribute("style", "text-align:center;");
+    container.appendChild(fileInput);
+
+    let button = document.createElement("button");
+    button.innerHTML = "Select Image: " + filename;
+    button.setAttribute("style","border-radious: 5px; margin-bottom: 5px;");
+    container.appendChild(button);
+
+    form.insertBefore(container, form.children[form.children.length -6]);
 
     return fileInput;
 }
