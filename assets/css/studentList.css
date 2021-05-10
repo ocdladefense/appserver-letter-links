@@ -1,15 +1,16 @@
-.card-container {
+#stage{
     background-color: hsl(196deg 100% 45% / 14%);
-    border-radius: 25px;
-    box-shadow: 10px 10px 15px rgb(0 0 0 / 35%);
+}
+
+.card-container {
+    /* background-color: hsl(196deg 100% 45% / 14%); */
     color: #848486;
     padding: 30px 0 0;
     position: relative;
     width: 100%;
-    max-width: 900px;
-    text-align: center;
     margin: auto;
     overflow: hidden;
+    padding: 20px;
 }
 
 .card-container .delete a{

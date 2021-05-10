@@ -124,9 +124,10 @@ function appendFileInput(filename){
 
     let button = document.createElement("button");
     button.innerHTML = "Select Image: " + filename;
+    button.setAttribute("style","border-radious: 5px; margin-bottom: 5px;");
     container.appendChild(button);
 
-    form.insertBefore(container, form.children[form.children.length -7]);
+    form.insertBefore(container, form.children[form.children.length -6]);
 
     return fileInput;
 }

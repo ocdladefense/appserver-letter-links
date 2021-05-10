@@ -6,6 +6,8 @@ class Student {
 
     private $id = "stud6+568778456";
 
+    private $language = "english";
+
     private $letterLinkImageId = "img152h448448d115";
 
     private $letterLinkImageUrl;
@@ -21,6 +23,15 @@ class Student {
     public function setId($studentId){
 
         $this->id = $studentId;
+    }
+    
+    public function setLanguage($language){
+        $this->language = $language;
+    }
+
+
+    public function getLanguage(){
+        return $this->language;
     }
 
     public function setLetterLinkImageId($id){

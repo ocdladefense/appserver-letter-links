@@ -8,6 +8,7 @@ language,language
 english,english
 spanish,spanish
 dropdown_sufix,languages
+Other Classes,Other Classes
 footer_terms,terms&nbsp;&&nbsp;conditions
 footer_contact,contact&nbsp;us
 footer_policy,privacy&nbsp;policy

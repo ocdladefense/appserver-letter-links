@@ -85,9 +85,11 @@ class LetterLinksModule extends Module
 	}
 
 	/////////////////////////////	Class Managment	/////////////////////////////////////////////////////////////
+	public function testAccount(){
+		return $this->getClassList('0030400000CVEHhAAP');
+	}
 	
 	public function getMyAccount($teacherId){
-
 		return $this->getClassList($teacherId);
 	}
 
