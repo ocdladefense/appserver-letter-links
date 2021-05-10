@@ -43,6 +43,11 @@ input[type=checkbox], input[type=radio] {
         width: auto;
 }
 
+.upload {
+
+    display: none !important;
+}
+
 
 @media screen and (min-width:800px) {
     .label {

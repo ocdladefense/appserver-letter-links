@@ -29,8 +29,8 @@
 		<h1 style="display: inline-block;"><?php print $student->getName(); ?> </h1>
 		<div id="editStudent" onclick="editName();"><i style="font-size: x-large;" class="fas fa-pencil-alt" ></i><span name="descriptions">Edit Student</span></div>
 		<div id="cancelStudent" onclick="cancel();"><i  style="font-size: x-large;" class="fa fa-times" aria-hidden="true"></i><span name="descriptions">cancel</span></div>
-		<br/><h4 style="display: inline-block;"><?php print $student->getLetterLinkCaption(); ?></h4>
-		<div id="editPicture"><i style="font-size: x-large; display: inline-block;" class="fas fa-image"></i><span name="descriptions">Edit Picture</span></div>
+		<!-- <br/><h4 style="display: inline-block;"><?php print $student->getLetterLinkCaption(); ?></h4>
+		<div id="editPicture"><i style="font-size: x-large; display: inline-block;" class="fas fa-image"></i><span name="descriptions">Edit Picture</span></div> -->
 	</div>
 
 	<div style="width: 100%;">
