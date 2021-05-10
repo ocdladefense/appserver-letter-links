@@ -1,5 +1,5 @@
 // Set options for including the built in file dialog, and uploading a file when dropped instead of on click of the submit button.
-let includeFileDialog = true;
+let includeFileDialog = false;
 let uploadOnDrop = true;
 
 // Set the drop zone area

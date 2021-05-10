@@ -17,28 +17,14 @@
 </script>
 
 
-<style>
-	.image-area{
-		text-align:center;
-	}
-	.image-area button{
 
-		width: 30%;
-		border-radius: 20px;
-		margin: 10px;
-	}
-	.upload {
-		display: none !important;
-	}
+<form enctype="multipart/form-data" id="upload-form" class="card-container" name="upload-form" method="post" action="/student/update" >
 
-</style>
-
-
-<div class="card-container">
-    <div class="top-label">
+	<div class="top-label">
 		<i class="student fas fa-apple-alt"></i>
 		<span class="delete"><a href="#"><i style="font-size: x-large;" class="fas fa-trash-alt"></i><span name="descriptions">delete</span></a></span>
 	</div>
+
 	<div class="nameTitle">
 		<h1 style="display: inline-block;"><?php print $student->getName(); ?> </h1>
 		<div id="editStudent" onclick="editName();"><i style="font-size: x-large;" class="fas fa-pencil-alt" ></i><span name="descriptions">Edit Student</span></div>
@@ -46,10 +32,10 @@
 		<br/><h4 style="display: inline-block;"><?php print $student->getLetterLinkCaption(); ?></h4>
 		<div id="editPicture"><i style="font-size: x-large; display: inline-block;" class="fas fa-image"></i><span name="descriptions">Edit Picture</span></div>
 	</div>
+
 	<div style="width: 100%;">
 		<img src="<?php print $student->getLetterLinkImageUrl(); ?>" alt="student-img">
 	</div>
-    
 
 	<div id="editName">
 		<label for="Name">Student Name</label><br />
@@ -57,11 +43,12 @@
 	</div>
 
 	<label id="lang" for="Name" style="padding-top: 10px; padding-bottom: 10px; text-transform: capitalize;"><?php print t("language")?>: <?php print "default language"?></label>
+	
 	<div id="studentForm" style="display: none; padding:10px 0px 10px 0px;">
 		<label for="Name" style="padding-top: 10px; padding-bottom: 10px; text-transform: capitalize;"><?php print t("language")?>:</label>
 		</br>
+
 		<div class="toggle-radio">
-			
 			<input type="radio" name="default" id="default_Option1" value="Option1" checked>
 			<label for="default_Option1"><?php print "default language"?></label>
 			<input type="radio" name="default" id="default_Option2" value="Option2" >
@@ -69,14 +56,14 @@
 			<!-- <input type="radio" name="default" id="default_Option3" value="Option3">
 			<label for="default_Option3">Option 3</label> -->
 		</div>
+
 		<div class="buttons" style="padding-top: 20px;">
-			<button class="primary">
-				Submit
-			</button>
+			<button class="primary">Submit</button>
 			<!-- <button class="primary">
 				Cancel
 			</button> -->
 		</div>
+	
 	</div>
     <div class="skills">
         <h5>Classes:</h5>
@@ -87,21 +74,6 @@
             <li>Class twighlight</li>
         </ul>
     </div>
-</div>
-
-<form enctype="multipart/form-data" id="upload-form" name="upload-form" method="post" action="/student/update" >
-
-	<div class="form-item image-area">
-		<img src="<?php print $student->getLetterLinkImageUrl(); ?>" /><br />
-		<label><?php print $student->getLetterLinkCaption(); ?></label><br />
-		<button onClick="showUploadForm();">Upload a new Image</button>
-		<button onClick="showUploadForm();">Select an existing image</button><br />
-	</div>
-
-	<div class="form-item">
-		<label for="Name">Student Name</label><br />
-		<input type="text" name="name" id="name" value="<?php print $student->getName(); ?>" placeholder="Enter student name" />
-	</div>
 
 	<input type="hidden" name="recordId" id="recordId" value="<?php print $student->getId(); ?>" />
 	<input type="hidden" name="letterLinkUrl" value="<?php print $student->getLetterLinkImageUrl(); ?>" />
@@ -112,19 +84,6 @@
 	
 </form>
 
-<script>
-
-	function showUploadForm(){
-
-		let uploadElements = document.getElementsByClassName("upload");
-
-		for(let i = 0; i < uploadElements.length; i++){
-
-			uploadElements[i].classList.remove("upload");
-		}
-	}
-
-</script>
 
 <link rel="stylesheet" type="text/css" href="<?php print module_path(); ?>/assets/css/dragDrop.css" />
 <link rel="stylesheet" type="text/css" href="<?php print module_path(); ?>/assets/css/student.css" />
