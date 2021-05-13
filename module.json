@@ -61,8 +61,7 @@
 			"content-type": "text/html",
 			"access":"is_authenticated",
 			"authorization":"webserver"
-		}
-		,
+		},
 		"classes/%cId/students":{
 			"callback": "getStudentList",
 			"content-type": "text/html"	
@@ -82,6 +81,10 @@
 		"test/soundex":{
 			"callback": "testSoundex",
 			"content-type": "text/html"	
+		},
+		"update/student/image":{
+			"callback": "updateStudentImage",
+			"content-type": "text/html"
 		}
 	}
 }

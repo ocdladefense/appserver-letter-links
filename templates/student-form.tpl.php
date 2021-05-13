@@ -74,10 +74,12 @@
 	<input type="hidden" name="letterLinkUrl" value="<?php print $student->getLetterLinkImageUrl(); ?>" />
 
 	<div class="form-item">
-		<input id="submit-button" type="submit" value="Upload" />
+		<input id="submit-button" type="submit" value="Submit" />
 	</div>
 	
 </form>
+
+<div id="form-container"></div>
 
 <link rel="stylesheet" type="text/css" href="/content/libraries/file/dragDrop/css/dragDrop.css" />
 <script src="/content/libraries/file/dragDrop/js/DragDropFileUpload.js"></script>

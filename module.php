@@ -183,4 +183,10 @@ class LetterLinksModule extends Module
 
 		return $tpl->render(array("student" => $student));
 	}
+
+
+	public function updateStudentImage(){
+
+		return $this->updateStudent();
+	}
 }
