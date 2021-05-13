@@ -1,6 +1,8 @@
 <?php
 
 // use Salesforce\Database as Database;
+use function LetterLinks\current_user;
+use Salesforce\Oauth as Oauth;
 
 class LetterLinksModule extends Module
 {
@@ -33,6 +35,12 @@ class LetterLinksModule extends Module
 	public function showHome($page = "about"){
 		return $this->showPage($page);
 	}
+
+	public function user(){
+		$user = current_user();
+		var_dump( $user);
+		exit;
+	}
 	
 	
 
@@ -47,6 +55,18 @@ class LetterLinksModule extends Module
 			"files" => $homeFiles
 		));
     }
+
+	public function logout(){
+		$connectedApp = "letter-links";
+		$flow = "webserver";
+		$logout = Oauth::logout($connectedApp, $flow,true);
+		if(!$logout) {
+			echo($logout);
+			exit;
+		}
+		
+		header('Location: /letterlinks/content/about', true, 302);
+	}
 
 	///////////////////////////	PICTURE MANAGER FUNCTIONALITY	//////////////////////////////////////////////////////
 
@@ -145,7 +165,8 @@ class LetterLinksModule extends Module
 
 	public function updateStudentForm($id){
 
-		$student = new Student("Joey Johnson");
+		$studentGroup = new StudentGroupManager($classId);
+		$student = $studentGroup->getStudent(1);
 		$student->setLetterLinkImageUrl(PictureManager::getImage($student->getLetterSound()));
 
 		//var_dump($student);exit;
@@ -182,5 +203,11 @@ class LetterLinksModule extends Module
 		$tpl->addPath(__DIR__ . "/templates");
 
 		return $tpl->render(array("student" => $student));
+	}
+
+	public function deleteStudent($studentId){
+		$studentGroup = new StudentGroupManager($classId);
+		$student = $studentGroup->getStudent($studentId);
+		var_dump($student);
 	}
 }
