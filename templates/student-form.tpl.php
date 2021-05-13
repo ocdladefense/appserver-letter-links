@@ -79,9 +79,13 @@
 	
 </form>
 
+<link rel="stylesheet" type="text/css" href="/content/libraries/file/dragDrop/css/dragDrop.css" />
+<script src="/content/libraries/file/dragDrop/js/DragDropFileUpload.js"></script>
+<script src="<?php print module_path(); ?>/assets/js/app.js"></script>
 
-<link rel="stylesheet" type="text/css" href="<?php print module_path(); ?>/assets/css/dragDrop.css" />
+
+<!-- <link rel="stylesheet" type="text/css" href="<?php print module_path(); ?>/assets/css/dragDrop.css" /> -->
+<!-- <script src="<?php print module_path(); ?>/assets/js/dragDrop.js" /> -->
+
 <link rel="stylesheet" type="text/css" href="<?php print module_path(); ?>/assets/css/student.css" />
-<script src="<?php print module_path(); ?>/assets/js/dragDrop.js" />
-<script src="<?php print module_path(); ?>/assets/js/student.js" />
-
+<script src="<?php print module_path(); ?>/assets/js/student.js"></script>
