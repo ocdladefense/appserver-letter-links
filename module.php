@@ -157,21 +157,50 @@ class LetterLinksModule extends Module
 
 	public function getStudentList($classId){
 
-		$studentGroup = new StudentGroupManager($classId);
-		$students = $studentGroup->getStudentList();
+		//$classId = "a18040000000ja8AAA";
+
+		$query = "SELECT Id, Name, Teacher__c FROM Class__c WHERE Id = '$classId'";
+
+		$resp = $this->execute($query, "query");
+
+		$class = StudentGroup::fromQueryResultRecord($resp->getRecord());
+
+		$students = $this->getStudents($class->getId());
 
 		$tpl = new Template("student-list");
 		$tpl->addPath(__DIR__ . "/templates");
 
-		return $tpl->render(array("students" => $students));
+		return $tpl->render(array("class" => $class, "students" => $students));
+	}
+
+	public function getStudents($classId) {
+
+		$query = "SELECT Id, FirstName__c, LastName__c, Age__c, Language__c, LetterLinkImageUrl__c FROM Student__c WHERE Class__c = '$classId'";
+
+		$resp = $this->execute($query, "query");
+
+		$students = array();
+		foreach($resp->getRecords() as $stud) {
+
+			$student =  Student::fromQueryResultRecord($stud);
+			$letterSound = $student->getLetterSound();
+            $student->setLetterLinkImageUrl(PictureManager::getImage($letterSound));
+			$students[] = $student;
+		}
+
+		return $students;
 	}
 
 
 	public function getStudent($id){
 
-		$studentGroup = new StudentGroupManager($classId);
-		$student = $studentGroup->getStudent(1);
-		$student->setLetterLinkImageUrl(PictureManager::getImage($student->getLetterSound()));
+		$query = "SELECT Id, FirstName__c, LastName__c, Age__c, Language__c, LetterLinkImageUrl__c FROM Student__c WHERE Id = '$id'";
+
+		$resp = $this->execute($query, "query");
+
+		$student = Student::fromQueryResultRecord($resp->getRecord());
+		$letterSound = $student->getLetterSound();
+		$student->setLetterLinkImageUrl(PictureManager::getImage($letterSound));
 
 		$tpl = new Template("student-form");
 		$tpl->addPath(__DIR__ . "/templates");

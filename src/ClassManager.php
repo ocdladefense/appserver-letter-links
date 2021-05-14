@@ -11,41 +11,41 @@ class ClassManager {
     }
 
     // Return a list of the teachers classes.
-    public function getClassList(){
+    // public function getClassList(){
 
-        $classes = array(
-            array(
-                "name"  => "Daily Morning Class 1",
-                "image" => module_path() . "/content/images/en/D/D-Dewan/daisy.jpg",
-                "imageName" => "Daisy"
-            ),
-            array(
-                "name"  => "Daily Morning Class 2",
-                "image" => module_path() . "/content/images/en/D/D-Dewan/dalmatian.jpg",
-                "imageName" => "Dalmatian"
-            ),
-            array(
-                "name"  => "Daily Afternoon Class 1",
-                "image" => module_path() . "/content/images/en/D/D-Dewan/dinosaur.jpg",
-                "imageName" => "Dinosaur"
-            ),
-            array(
-                "name"  => "Daily Afternoon Class 2",
-                "image" => module_path() . "/content/images/en/D/D-Dewan/dog2.jpg",
-                "imageName" => "Dog"
-            ),
-            array(
-                "name"  => "Daily Evening Class 1",
-                "image" => module_path() . "/content/images/en/D/D-Dewan/dolphin.jpg",
-                "imageName" => "Dolphin"
-            ),
-            array(
-                "name"  => "Daily Evening Class 2",
-                "image" => module_path() . "/content/images/en/D/D-Dewan/donut.jpg",
-                "imageName" => "Donut"
-            )
-        );
+    //     $classes = array(
+    //         array(
+    //             "name"  => "Daily Morning Class 1",
+    //             "image" => module_path() . "/content/images/en/D/D-Dewan/daisy.jpg",
+    //             "imageName" => "Daisy"
+    //         ),
+    //         array(
+    //             "name"  => "Daily Morning Class 2",
+    //             "image" => module_path() . "/content/images/en/D/D-Dewan/dalmatian.jpg",
+    //             "imageName" => "Dalmatian"
+    //         ),
+    //         array(
+    //             "name"  => "Daily Afternoon Class 1",
+    //             "image" => module_path() . "/content/images/en/D/D-Dewan/dinosaur.jpg",
+    //             "imageName" => "Dinosaur"
+    //         ),
+    //         array(
+    //             "name"  => "Daily Afternoon Class 2",
+    //             "image" => module_path() . "/content/images/en/D/D-Dewan/dog2.jpg",
+    //             "imageName" => "Dog"
+    //         ),
+    //         array(
+    //             "name"  => "Daily Evening Class 1",
+    //             "image" => module_path() . "/content/images/en/D/D-Dewan/dolphin.jpg",
+    //             "imageName" => "Dolphin"
+    //         ),
+    //         array(
+    //             "name"  => "Daily Evening Class 2",
+    //             "image" => module_path() . "/content/images/en/D/D-Dewan/donut.jpg",
+    //             "imageName" => "Donut"
+    //         )
+    //     );
         
-        return $classes;
-    }
+    //     return $classes;
+    // }
 }

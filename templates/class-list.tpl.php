@@ -19,7 +19,7 @@
         <li>
             <input id="class<?php print $class->getId(); ?>" value="<?php print $class->getId(); ?>" hidden/>
             <label for="class<?php print $class->getId(); ?>">
-                <a href="/classes/class-123abc/students">
+                <a href="/classes/<?php print $class->getId(); ?>/students">
                     <img src="<?php print $class->getLetterLinkImageUrl(); ?>" />
                     <div class="class-caption"><?php print $class->getName(); ?></div>
                 </a>
