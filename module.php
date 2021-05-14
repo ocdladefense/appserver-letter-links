@@ -45,7 +45,7 @@ class LetterLinksModule extends Module
 		exit;
 	}
 	
-	
+
 
 	public function login()
 	{
@@ -138,6 +138,23 @@ class LetterLinksModule extends Module
 
 		return $tpl->render(array("classList" => $classList, "teacher" => $teacher));
 	}
+
+	public function addClass(){
+
+		$req = $this->getRequest();
+		$formData = $req->getBody();
+		$teacherId = "0030400000CVEHhAAP";//getting from form/session later?
+
+		$api = $this->loadForceApi();
+		$sobject = array(
+			'Teacher__c' => $teacherId,
+			"LetterLinkImageURL__c" => "/modules/appserver-letter-links/content/prototypeImages/dog.jpg",//$formData->LetterLinkImageURL__c,
+			"Name" => "Test Class from Form"//$formData->Name
+		 );
+		$response = $api->upsert("Class__c",$sobject);
+		return $this->getClassList($teacherId);
+	}
+	
 
 	public function getTeacher($teacherId){
 
