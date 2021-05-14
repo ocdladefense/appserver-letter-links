@@ -76,6 +76,10 @@
 			"callback": "updateStudent",
 			"content-type": "text/html"	
 		},
+		"add/student":{
+			"callback": "addStudent",
+			"content-type": "text/html"	
+		},
 		"delete/student/%id":{
 			"callback": "deleteStudent",
 			"content-type": "text/html"	

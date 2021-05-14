@@ -250,9 +250,28 @@ class LetterLinksModule extends Module
 		return $resp;
 	}
 
+	public function addStudent() {
+
+		$req = $this->getRequest();
+		$student = $req->getBody();
+
+		$api = $this->loadForceApi();
+		
+		$resp = $api->upsert("Student__c", $student);
+
+		if(!$resp->success()) throw new Exception($resp->getErrorMessage());
+
+		$resp = new HttpResponse();
+		$resp->addHeader(new HttpHeader("Location", "/classes/$student->Class__c/students"));
+
+		return $resp;
+	}
+
 	public function deleteStudent($studentId){
 
 		$api = $this->loadForceApi();
+
+		$req = $this->getRequest();
 
 		$resp = $api->delete("Student__c", $studentId);
 
