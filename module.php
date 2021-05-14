@@ -149,7 +149,6 @@ class LetterLinksModule extends Module
 
 	public function getStudent($id){
 
-
 		$student = new Student("Joey Johnson");
 		$student->setLetterLinkImageUrl(PictureManager::getImage($student->getLetterSound()));
 
