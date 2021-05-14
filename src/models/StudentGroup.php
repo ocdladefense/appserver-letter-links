@@ -1,5 +1,6 @@
 <?php
 
+// Actually represents a class of students.
 class StudentGroup extends Salesforce\SObject {
 
     private $TeacherId;

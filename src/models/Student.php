@@ -2,88 +2,120 @@
 
 class Student {
 
-    private $name;
+    private $Id;
 
-    private $id = "stud6+568778456";
+    private $FirstName;
 
-    private $language = "english";
+    private $LastName;
 
-    private $letterLinkImageId = "img152h448448d115";
+    private $Age;
 
-    private $letterLinkImageUrl;
+    private $Language;
 
-    private $letterLinkCaption;
+    private $LetterLinkImageUrl;
 
-    public function __construct($name, $id = null){
+    private $LetterLinkCaption;
 
-        $this->name = $name;
-        $this->id = !empty($id) ? $id : "stud6+568778456";
+    public function __construct() {}
+
+    public static function fromQueryResultRecord($student){
+
+        $st = new self();
+
+        $st->Id = $student["Id"];
+        $st->Name = $student["FirstName__c"] . " " . $student["LastName__c"];
+        $st->FirstName = $student["FirstName__c"];
+        $st->LastName = $student["LastName__c"];
+        $st->Language = $student["Language__c"] != null ? $student["Language__c"] : "english";
+        $st->LetterLinkImageUrl = $student["LetterLinkImageURL__c"];
+        $st->LetterLinkCaption = $student["LetterLinkCaption__c"];
+        $st->Age = $student["Age__c"];
+
+        return $st;
     }
 
     public function setId($studentId){
 
-        $this->id = $studentId;
+        $this->Id = $studentId;
+    }
+
+    public function getFirstName(){
+
+        return $this->FirstName;
+    }
+
+    public function getLastName(){
+
+        return $this->LastName;
     }
     
+    public function getAge(){
+
+        return $this->Age;
+    }
+
     public function setLanguage($language){
-        $this->language = $language;
+        $this->Language = $language;
     }
 
 
     public function getLanguage(){
-        return $this->language;
+        return $this->Language;
     }
 
     public function setLetterLinkImageId($id){
 
-        $this->letterLinkImageId = $id;
+        $this->LetterLinkImageId = $id;
     }
 
     public function setLetterLinkImageUrl($url){
 
-        $this->letterLinkImageUrl = $url;
+        $this->LetterLinkImageUrl = $url;
+        $this->LetterLinkCaption = $this->getLetterLinkCaption();
     }
 
     public function setLetterLinkCaption($caption){
 
-        $this->letterLinkCaption = $caption;
+        $this->LetterLinkCaption = $caption;
     }
 
     public function getName(){
 
-        return $this->name;
+        return $this->Name;
     }
 
     public function getId(){
 
-        return $this->id;
+        return $this->Id;
     }
 
     // soundex  
     public function getLetterSound($algo = "FirstTwo"){
 
-        return strtolower(substr($this->name, 0, 2));
+        return strtolower(substr($this->FirstName, 0, 2));
     }
 
     public function getLetterLinkImageId(){
 
-        return $this->letterLinkImageId;
+        return $this->LetterLinkImageId;
     }
 
     public function getLetterLinkImageUrl(){
 
-        return $this->letterLinkImageUrl;
+        return $this->LetterLinkImageUrl;
     }
 
     public function getLetterLinkCaption(){
 
-        $urlParts = explode("/", $this->letterLinkImageUrl);
+        $urlParts = explode("/", $this->LetterLinkImageUrl);
 
         $caption = $urlParts[count($urlParts) -1];
 
         return $caption;
     }
 
+
+    // Needs Word!!! Not even close.  More like a note to self.
     public function __toJson(){
 
         $student = array(

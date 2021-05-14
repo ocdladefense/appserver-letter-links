@@ -12,7 +12,7 @@
 
     <div class="nameTitle">
 		<h1 style="justify-content: left; display: inline-block; padding-top: 10px;">Student List</h1></br>
-        <h1 style="justify-content: left; display: inline-block; padding-top: 10px;">9 AM</h1><h2 style="justify-content: left; display: inline-block; padding-top: 10px;">Class</h2>
+        <h1 style="justify-content: left; display: inline-block; padding-top: 10px;"><?php print $class->getName(); ?></h1><h2 style="justify-content: left; display: inline-block; padding-top: 10px;"></h2>
 	</div>
 	<div id="classImg" style="width: 100%; display:none;">
 		<img src="https://letterlinks.highscope.org/Pictures/246_110810103117jaguar.jpg" alt="student-list-img" width="215px" height="215px">
@@ -27,7 +27,7 @@
 
             <input type="checkbox" id="student<?php print $student->getId(); ?>" />
             <label for="student<?php print $student->getId(); ?>">
-                <a href="/student/a125545852256gv5f4/update">
+                <a href="/student/<?php print $student->getId(); ?>">
                     <img src="<?php print $student->getLetterLinkImageUrl(); ?>" />
                     <div class="student-caption"><?php print $student->getName(); ?></div>
                     <i class="fas fa-edit" style="color:rgba(210, 165, 80); font-size:x-large;" ></i>

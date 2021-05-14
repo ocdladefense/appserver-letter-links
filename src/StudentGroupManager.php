@@ -4,6 +4,8 @@ class StudentGroupManager {
 
     public $studentGroupId;
 
+    public $studentList;
+
     public function __construct($studentGroupId){
 
         $this->studentGroupId = $studentGroupId;
