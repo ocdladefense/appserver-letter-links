@@ -192,7 +192,7 @@ class LetterLinksModule extends Module
 
 	public function getStudents($classId) {
 
-		$query = "SELECT Id, FirstName__c, LastName__c, Age__c, Language__c, LetterLinkImageUrl__c FROM Student__c WHERE Class__c = '$classId'";
+		$query = "SELECT Id, Name, Age__c, Language__c, LetterLinkImageUrl__c FROM Student__c WHERE Class__c = '$classId'";
 
 		$resp = $this->execute($query, "query");
 
@@ -211,7 +211,7 @@ class LetterLinksModule extends Module
 
 	public function getStudent($id){
 
-		$query = "SELECT Id,Name, FirstName__c, LastName__c, Age__c, Language__c, LetterLinkImageUrl__c FROM Student__c WHERE Id = '$id'";
+		$query = "SELECT Id, Name, Age__c, Language__c, LetterLinkImageUrl__c FROM Student__c WHERE Id = '$id'";
 
 		$resp = $this->execute($query, "query");
 
@@ -253,8 +253,16 @@ class LetterLinksModule extends Module
 	}
 
 	public function deleteStudent($studentId){
-		$studentGroup = new StudentGroupManager($classId);
-		$student = $studentGroup->getStudent($studentId);
-		var_dump($student);
+
+		$api = $this->loadForceApi();
+
+		$resp = $api->delete("Student__c", $studentId);
+
+		if(!$resp->success()) throw new Exception($resp->getErrorMessage());
+
+		$resp = new HttpResponse();
+		$resp->addHeader(new HttpHeader("Location", "/my-account"));  // Should take you back to the class list.
+
+		return $resp;
 	}
 }

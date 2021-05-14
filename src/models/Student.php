@@ -4,10 +4,6 @@ class Student {
 
     private $Id;
 
-    private $FirstName;
-
-    private $LastName;
-
     private $Age;
 
     private $Language;
@@ -24,8 +20,6 @@ class Student {
 
         $st->Id = $student["Id"];
         $st->Name = $student["Name"];
-        $st->FirstName = $student["FirstName__c"];
-        $st->LastName = $student["LastName__c"];
         $st->Language = $student["Language__c"] != null ? $student["Language__c"] : "english";
         $st->LetterLinkImageUrl = $student["LetterLinkImageURL__c"];
         $st->LetterLinkCaption = $student["LetterLinkCaption__c"];
@@ -34,39 +28,11 @@ class Student {
         return $st;
     }
 
-    // public static function fromRequestObj($obj){
-
-    //     $st = new self();
-
-    //     $st->Id = $obj->recordId;
-    //     $st->Name = $student["FirstName__c"] . " " . $student["LastName__c"];
-    //     $st->FirstName = $student["FirstName__c"];
-    //     $st->LastName = $student["LastName__c"];
-    //     $st->Language = $student["Language__c"] != null ? $student["Language__c"] : "english";
-    //     $st->LetterLinkImageUrl = $student["LetterLinkImageURL__c"];
-    //     $st->LetterLinkCaption = $student["LetterLinkCaption__c"];
-    //     $st->Age = $student["Age__c"];
-
-    //     return $st;
-
-    //     var_dump($obj);exit;
-    // }
-
     public function setId($studentId){
 
         $this->Id = $studentId;
     }
 
-    public function getFirstName(){
-
-        return $this->FirstName;
-    }
-
-    public function getLastName(){
-
-        return $this->LastName;
-    }
-    
     public function getAge(){
 
         return $this->Age;
@@ -110,7 +76,7 @@ class Student {
     // soundex  
     public function getLetterSound($algo = "FirstTwo"){
 
-        return strtolower(substr($this->FirstName, 0, 2));
+        return strtolower(substr($this->Name, 0, 2));
     }
 
     public function getLetterLinkImageId(){
@@ -134,16 +100,5 @@ class Student {
 
 
     // Needs Word!!! Not even close.  More like a note to self.
-    public function __toJson(){
-
-        $student = array(
-            "Name"      => $this->Name,
-            "Id"        => $this->Id,
-            "LetterLinkImageUrl__c"    => $this->LetterLinkImageUrl,
-            "FirstName__c"  => $this->FirstName,
-            "LastName__c"   => $this->LastName
-        );
-
-        return json_encode($student);
-    }
+    public function __toJson(){}
 }
