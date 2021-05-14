@@ -70,8 +70,8 @@
         </ul>
     </div>
 
-	<input type="hidden" name="recordId" id="recordId" value="<?php print $student->getId(); ?>" />
-	<input type="hidden" name="letterLinkUrl" value="<?php print $student->getLetterLinkImageUrl(); ?>" />
+	<input type="hidden" name="Id" id="studentId" value="<?php print $student->getId(); ?>" />
+	<input type="hidden" name="LetterLinkImageURL__c" value="<?php print $student->getLetterLinkImageUrl(); ?>" />
 	
 </form>
 
