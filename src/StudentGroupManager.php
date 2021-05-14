@@ -32,4 +32,13 @@ class StudentGroupManager {
 
         return $students;   // tojson
     }
+
+    public function getStudent($studentId){
+        foreach($this->getStudentList() as $student){
+
+            if($student->getId() == $studentId){
+                return $student;
+            }
+        }
+    }
 }
