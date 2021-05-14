@@ -118,12 +118,12 @@ class LetterLinksModule extends Module
 
 	public function getClassList($teacherId){
 
-		$api = $this->loadForceApi();
+		//$api = $this->loadForceApi();
 
 		// Will be ordering by Day__c or something other than name.  Create the field on the class.
 		$query = "SELECT Id, Name, LetterLinkImageURL__c, Teacher__r.Name, Teacher__c FROM Class__c WHERE Teacher__c = '$teacherId' ORDER BY Name";
 		
-		$results = $api->query($query);
+		$results = $this->execute($query, "query");
 
 		$classList = array();
 		foreach($results->getRecords() as $class){
@@ -158,11 +158,9 @@ class LetterLinksModule extends Module
 
 	public function getTeacher($teacherId){
 
-		$api = $this->loadForceApi();
-
 		$query = "SELECT Id, FirstName, LastName, LetterLinkImageURL__c FROM Contact WHERE Id = '$teacherId'";
 
-		$results = $api->query($query);
+		$results = $this->execute($query, "query");
 
 		return Teacher::fromQueryResultRecord($results->getRecord(0));
 	}
