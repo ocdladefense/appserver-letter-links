@@ -201,7 +201,7 @@ class LetterLinksModule extends Module
 
 			$student =  Student::fromQueryResultRecord($stud);
 			$letterSound = $student->getLetterSound();
-            $student->setLetterLinkImageUrl(PictureManager::getImage($letterSound));
+            if($student->getLetterLinkImageUrl() == null) $student->setLetterLinkImageUrl(PictureManager::getImage($letterSound));
 			$students[] = $student;
 		}
 
@@ -211,13 +211,13 @@ class LetterLinksModule extends Module
 
 	public function getStudent($id){
 
-		$query = "SELECT Id, FirstName__c, LastName__c, Age__c, Language__c, LetterLinkImageUrl__c FROM Student__c WHERE Id = '$id'";
+		$query = "SELECT Id,Name, FirstName__c, LastName__c, Age__c, Language__c, LetterLinkImageUrl__c FROM Student__c WHERE Id = '$id'";
 
 		$resp = $this->execute($query, "query");
 
 		$student = Student::fromQueryResultRecord($resp->getRecord());
 		$letterSound = $student->getLetterSound();
-		$student->setLetterLinkImageUrl(PictureManager::getImage($letterSound));
+		if($student->getLetterLinkImageUrl() == null) $student->setLetterLinkImageUrl(PictureManager::getImage($letterSound));
 
 		$tpl = new Template("student-form");
 		$tpl->addPath(__DIR__ . "/templates");
@@ -229,22 +229,22 @@ class LetterLinksModule extends Module
 	public function updateStudent(){
 		
 		$req = $this->getRequest();
-		$formData = $req->getBody();
-		$studentId = $formData->recordId;
-
 		$files = $req->getFiles();
 
-		var_dump($files);exit;
-
-		$student = new Student($formData->name);
-		$student->setLetterLinkCaption($formData->caption);
-		$student->setLetterLinkImageUrl($formData->letterLinkUrl);
+		$student = $req->getBody();
+		$studentId = $student->Id;
+		unset($student->default);  // Not a field on the student in salesforce.
 
 		if($files->size() > 0){
 
 			$pathToImage = "/content/uploads/" . $files->getFirst()->getName(); // Use the path_to_uploads() 
-			$student->setLetterLinkImageUrl($pathToImage);
+			$student->LetterLinkImageURL__c = $pathToImage;
 		}
+
+		$api = $this->loadForceApi();
+		$resp = $api->upsert("Student__c", $student);
+
+		if(!$resp->success()) throw new Exception($resp->getErrorMessage());
 
 		$resp = new HttpResponse();
 		$resp->addHeader(new HttpHeader("Location", "/student/{$studentId}"));

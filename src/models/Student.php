@@ -23,7 +23,7 @@ class Student {
         $st = new self();
 
         $st->Id = $student["Id"];
-        $st->Name = $student["FirstName__c"] . " " . $student["LastName__c"];
+        $st->Name = $student["Name"];
         $st->FirstName = $student["FirstName__c"];
         $st->LastName = $student["LastName__c"];
         $st->Language = $student["Language__c"] != null ? $student["Language__c"] : "english";
@@ -33,6 +33,24 @@ class Student {
 
         return $st;
     }
+
+    // public static function fromRequestObj($obj){
+
+    //     $st = new self();
+
+    //     $st->Id = $obj->recordId;
+    //     $st->Name = $student["FirstName__c"] . " " . $student["LastName__c"];
+    //     $st->FirstName = $student["FirstName__c"];
+    //     $st->LastName = $student["LastName__c"];
+    //     $st->Language = $student["Language__c"] != null ? $student["Language__c"] : "english";
+    //     $st->LetterLinkImageUrl = $student["LetterLinkImageURL__c"];
+    //     $st->LetterLinkCaption = $student["LetterLinkCaption__c"];
+    //     $st->Age = $student["Age__c"];
+
+    //     return $st;
+
+    //     var_dump($obj);exit;
+    // }
 
     public function setId($studentId){
 
@@ -119,12 +137,13 @@ class Student {
     public function __toJson(){
 
         $student = array(
-            "name"      => $this->name,
-            "id"        => $this->id,
-            "letterLinkId" => $this->letterLinkId,
-            "letterLinkImageUrl"    => $this->letterLinkImageUrl
+            "Name"      => $this->Name,
+            "Id"        => $this->Id,
+            "LetterLinkImageUrl__c"    => $this->LetterLinkImageUrl,
+            "FirstName__c"  => $this->FirstName,
+            "LastName__c"   => $this->LastName
         );
 
-        return $student;
+        return json_encode($student);
     }
 }
