@@ -4,6 +4,7 @@
 	"name": "letter-links",
 	"description": "letter-links",
 	"files": [
+		"globals.php",
 		"TestTemplate.php",
 		"ClassManager.php",
 		"LanguageManager.php",
@@ -13,6 +14,7 @@
 		"models/StudentGroup.php",
 		"models/Teacher.php",
 		"soundex/FirstTwo.php"
+		
 	],
 	"languages":["en","es"],
 	"routes": {
