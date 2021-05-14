@@ -61,7 +61,7 @@ class LetterLinksModule extends Module
 		$flow = "webserver";
 		$logout = Oauth::logout($connectedApp, $flow,true);
 		if(!$logout) {
-			echo($logout);
+			echo("error");
 			exit;
 		}
 		

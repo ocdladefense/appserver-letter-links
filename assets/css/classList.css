@@ -2,6 +2,10 @@
     background-color: hsl(196deg 100% 45% / 14%);
 }
 
+a{
+    text-decoration: none;
+}
+
 .card-container {
     /* background-color: hsl(196deg 100% 45% / 14%); */
     color: #848486;
@@ -27,35 +31,6 @@
     text-decoration: none;
 }
 
-.card-container .delete:hover {
-    color: red;
-}
-
-.card-container .student {
-    color: #e01a1a;
-    text-shadow: 1px 1px 1px black;
-    font-size: 20px;
-    position: absolute;
-    top: 17px;
-    z-index: 0;
-    left: 12px;
-    text-decoration: none;
-}
-
-.card-container .classImg img {
-    border: 1px solid #012169;
-    border-radius: 20%;
-    padding: 7px;
-    height: 215px;
-    width: 215px;
-}
-
-.nameTitle{
-    line-height: normal;
-
-}
-
-
 .top-label .fa-search{
     text-decoration: none;
     font-weight: bold;
@@ -79,36 +54,23 @@
     color: rgb(106, 147, 209);
 }
 
-
-/*checklist*/
-
-ul {
-    list-style-type: none;
-  }
-  
-  li {
-    display: inline-block;
-  }
-  
-  input[type="checkbox"][id^="student"] {
-    display: none;
-  }
-  
-  label {
+label {
     border: 1px solid #012169;
     border-radius: 10px;
     padding: 10px;
-    display: block;
+    display: inline-block;
     position: relative;
     margin: 10px;
     cursor: pointer;
+    background-color: #fff;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
+    max-width: 172px;
+}
   
   label::before {
     background-color: white;
@@ -126,7 +88,7 @@ ul {
     line-height: 28px;
     transition-duration: 0.4s;
     transform: scale(0);
-  }
+}
   
   label img {
     height: 150px;
@@ -135,79 +97,28 @@ ul {
     transform-origin: 50% 50%;
     border-radius: 10px;
     display: block;
-  }
-  
-  :checked+label {
-    border-color: #ddd;
-  }
-  
-  :checked+label::before {
-    content: "✓";
-    background-color: grey;
-    transform: scale(1);
-  }
-  
-  :checked+label img {
-    transform: scale(0.9);
-    box-shadow: 0 0 5px #333;
-    z-index: -1;
-  }
-
-/*end of checklist*/
-
-
-.student-label{
-    position: relative;
-    top: 45px;
-    right: -69px;
-    z-index: 1;
 }
 
-.student-label .fa-print{
-    color: black;
-    background-color: #eceff2;
-    border-radius: 5px;
-    padding: 10px 10px 10px 10px;
-    font-size: x-large;
-    border: 1px solid black;
-    cursor: pointer;
-}
-
-.student-caption{
-    color: rgb(51 75 179);
-    font-weight: bold;
-    font-style: italic;
+li {
     display: inline-block;
+    min-width: 210px;
 }
 
-.item-image{
+.class-caption{
+    font-size: 0.9em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     display: inline-block;
-}
-a{
-    text-decoration: none;
-}
-.even-row{
-    background-color: aquamarine;
-}
-.odd-row{
-    background-color: lightblue;
-}
-h1{
-    font-size: 5Vmin;
-}
-.button-right{
-    margin-left: 40px;
-}
-.caption{
-    display: block;
+    text-align: center;
+    width: 100%;
+    background-color: #012169;
+    border-radius: 15px;
+    color: #fff;
+    margin-top: 5px;
+    margin-bottom: 1px;
 }
 
-@media only screen and (max-width:750px){
-
-    .list-item{
-        display: block;
-        width: unset;
-    }
+.class-caption .fa-edit{
+    color:rgba(210, 165, 80); 
+    font-size:x-large;
+    margin-left: 5px;
 }
-
-@media only screen and (min-width:1100px){}
