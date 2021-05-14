@@ -19,7 +19,7 @@
 
 
 
-<form enctype="multipart/form-data" id="upload-form" class="card-container" name="upload-form" method="post" action="/student/update" >
+<form enctype="multipart/form-data" id="upload-form" class="card-container" name="upload-form" method="post" action="/update/student" >
 
 	<div class="top-label">
 		<span class="delete"><a href="/student/<?php print $student->getId(); ?>/delete"><i style="font-size: x-large;" class="fas fa-trash-alt"></i></a></span>
@@ -72,20 +72,14 @@
 
 	<input type="hidden" name="recordId" id="recordId" value="<?php print $student->getId(); ?>" />
 	<input type="hidden" name="letterLinkUrl" value="<?php print $student->getLetterLinkImageUrl(); ?>" />
-
-	<div class="form-item">
-		<input id="submit-button" type="submit" value="Upload" />
-	</div>
 	
 </form>
+
+<div id="form-container"></div>
 
 <link rel="stylesheet" type="text/css" href="/content/libraries/file/dragDrop/css/dragDrop.css" />
 <script src="/content/libraries/file/dragDrop/js/DragDropFileUpload.js"></script>
 <script src="<?php print module_path(); ?>/assets/js/app.js"></script>
-
-
-<!-- <link rel="stylesheet" type="text/css" href="<?php print module_path(); ?>/assets/css/dragDrop.css" /> -->
-<!-- <script src="<?php print module_path(); ?>/assets/js/dragDrop.js" /> -->
 
 <link rel="stylesheet" type="text/css" href="<?php print module_path(); ?>/assets/css/student.css" />
 <script src="<?php print module_path(); ?>/assets/js/student.js"></script>

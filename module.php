@@ -1,5 +1,8 @@
 <?php
 
+use Http\HttpResponse;
+use Http\HttpHeader;
+
 // use Salesforce\Database as Database;
 use function LetterLinks\current_user;
 use Salesforce\Oauth as Oauth;
@@ -163,31 +166,29 @@ class LetterLinksModule extends Module
 		return $tpl->render(array("students" => $students));
 	}
 
-	public function updateStudentForm($id){
+
+	public function getStudent($id){
 
 		$studentGroup = new StudentGroupManager($classId);
 		$student = $studentGroup->getStudent(1);
 		$student->setLetterLinkImageUrl(PictureManager::getImage($student->getLetterSound()));
 
-		//var_dump($student);exit;
-
 		$tpl = new Template("student-form");
 		$tpl->addPath(__DIR__ . "/templates");
 
-		//$tpl->addScripts(array(array('src' => module_path()."/assets/js/student.js")));
-		// $tpl->addStyles(array(
-		// 	"active" => true,
-		// 	"href" => getPathToModules().module_path()."/assets/css/student.css"
-		// ));
 		return $tpl->render(array("student" => $student));
 	}
 
-	public function updateStudent(){
 
+	public function updateStudent(){
+		
 		$req = $this->getRequest();
 		$formData = $req->getBody();
+		$studentId = $formData->recordId;
 
 		$files = $req->getFiles();
+
+		var_dump($files);exit;
 
 		$student = new Student($formData->name);
 		$student->setLetterLinkCaption($formData->caption);
@@ -195,14 +196,14 @@ class LetterLinksModule extends Module
 
 		if($files->size() > 0){
 
-			$pathToImage = "/content/uploads/" . $files->getFirst()->getName();
+			$pathToImage = "/content/uploads/" . $files->getFirst()->getName(); // Use the path_to_uploads() 
 			$student->setLetterLinkImageUrl($pathToImage);
 		}
 
-		$tpl = new Template("student-form");
-		$tpl->addPath(__DIR__ . "/templates");
+		$resp = new HttpResponse();
+		$resp->addHeader(new HttpHeader("Location", "/student/{$studentId}"));
 
-		return $tpl->render(array("student" => $student));
+		return $resp;
 	}
 
 	public function deleteStudent($studentId){
