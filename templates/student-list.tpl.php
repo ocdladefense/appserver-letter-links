@@ -11,8 +11,8 @@
 
 
     <div class="nameTitle">
-		<h1 style="justify-content: left; display: inline-block; padding-top: 10px;">AM Class 1</h1>
-        <h2 style="justify-content: left; display: block; padding-top: 10px;">Jose Bernal</h2>
+		<h1 style="justify-content: left; display: inline-block; padding-top: 10px;">Student List</h1></br>
+        <h1 style="justify-content: left; display: inline-block; padding-top: 10px;">9 AM</h1><h2 style="justify-content: left; display: inline-block; padding-top: 10px;">Class</h2>
 	</div>
 	<div id="classImg" style="width: 100%; display:none;">
 		<img src="https://letterlinks.highscope.org/Pictures/246_110810103117jaguar.jpg" alt="student-list-img" width="215px" height="215px">
@@ -35,7 +35,7 @@
             </label>
         </li>
         <?php endforeach ?>
-      </ul>
+    </ul>
 
 </div>
 
