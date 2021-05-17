@@ -17,7 +17,7 @@
 	}
 </script>
 
-
+<a href="/classes/<?php print $student->getClass__c(); ?>/students">back to list</a>
 
 <form enctype="multipart/form-data" id="upload-form" class="card-container" name="upload-form" method="post" action="/update/student" >
 
