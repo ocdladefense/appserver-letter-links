@@ -190,7 +190,7 @@ class LetterLinksModule extends Module
 
 	public function getStudents($classId) {
 
-		$query = "SELECT Id, Name, Age__c, Language__c, LetterLinkImageUrl__c FROM Student__c WHERE Class__c = '$classId'";
+		$query = "SELECT Id, Name, Age__c, Class__c Language__c, LetterLinkImageUrl__c FROM Student__c WHERE Class__c = '$classId'";
 
 		$resp = $this->execute($query, "query");
 
@@ -209,7 +209,7 @@ class LetterLinksModule extends Module
 
 	public function getStudent($id){
 
-		$query = "SELECT Id, Name, Age__c, Language__c, LetterLinkImageUrl__c FROM Student__c WHERE Id = '$id'";
+		$query = "SELECT Id, Class__c, Name, Age__c, Language__c, LetterLinkImageUrl__c FROM Student__c WHERE Id = '$id'";
 
 		$resp = $this->execute($query, "query");
 

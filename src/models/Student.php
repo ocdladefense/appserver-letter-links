@@ -4,6 +4,8 @@ class Student {
 
     private $Id;
 
+    private $Class__c;
+
     private $Age;
 
     private $Language;
@@ -19,18 +21,24 @@ class Student {
         $st = new self();
 
         $st->Id = $student["Id"];
+        $st->Class__c = $student["Class__c"];
         $st->Name = $student["Name"];
         $st->Language = $student["Language__c"] != null ? $student["Language__c"] : "english";
         $st->LetterLinkImageUrl = $student["LetterLinkImageURL__c"];
         $st->LetterLinkCaption = $student["LetterLinkCaption__c"];
         $st->Age = $student["Age__c"];
-
+        
         return $st;
     }
 
     public function setId($studentId){
 
         $this->Id = $studentId;
+    }
+
+    public function setClass__c($classId){
+
+        $this->Class__c = $classId;
     }
 
     public function getAge(){
@@ -71,6 +79,11 @@ class Student {
     public function getId(){
 
         return $this->Id;
+    }
+
+    public function getClass__c(){
+
+        return $this->Class__c;
     }
 
     // soundex  
