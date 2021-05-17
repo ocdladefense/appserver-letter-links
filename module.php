@@ -169,10 +169,8 @@ class LetterLinksModule extends Module
 
 	//////////////////////////////	Student Managment	/////////////////////////////////////////////////
 
-
+	// Shows the page with the list of students for a given class Id.
 	public function showStudentList($classId){
-
-		//$classId = "a18040000000ja8AAA";
 
 		$query = "SELECT Id, Name, Teacher__c FROM Class__c WHERE Id = '$classId'";
 
@@ -188,6 +186,7 @@ class LetterLinksModule extends Module
 		return $tpl->render(array("class" => $class, "students" => $students));
 	}
 
+	// Returns a list of "Student" objects for a given class id.
 	public function getStudents($classId) {
 
 		$query = "SELECT Id, Name, Age__c, Class__c, Language__c, LetterLinkImageUrl__c FROM Student__c WHERE Class__c = '$classId'";
@@ -206,6 +205,7 @@ class LetterLinksModule extends Module
 		return $students;
 	}
 
+	// Shows the stand alone student page for a student at a given "Student__c" id.
 	public function showStudent($studentId){
 
 		$student = $this->getStudent($studentId);
@@ -217,6 +217,7 @@ class LetterLinksModule extends Module
 	}
 
 
+	// Returns a "Student" php object.
 	public function getStudent($id){
 
 		$query = "SELECT Id, Class__c, Name, Age__c, Language__c, LetterLinkImageUrl__c FROM Student__c WHERE Id = '$id'";
@@ -229,7 +230,6 @@ class LetterLinksModule extends Module
 
 		return $student;
 	}
-
 
 	public function updateStudent(){
 		
