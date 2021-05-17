@@ -169,10 +169,8 @@ class LetterLinksModule extends Module
 
 	//////////////////////////////	Student Managment	/////////////////////////////////////////////////
 
-
-	public function getStudentList($classId){
-
-		//$classId = "a18040000000ja8AAA";
+	// Shows the page with the list of students for a given class Id.
+	public function showStudentList($classId){
 
 		$query = "SELECT Id, Name, Teacher__c FROM Class__c WHERE Id = '$classId'";
 
@@ -188,9 +186,10 @@ class LetterLinksModule extends Module
 		return $tpl->render(array("class" => $class, "students" => $students));
 	}
 
+	// Returns a list of "Student" objects for a given class id.
 	public function getStudents($classId) {
 
-		$query = "SELECT Id, Name, Age__c, Language__c, LetterLinkImageUrl__c FROM Student__c WHERE Class__c = '$classId'";
+		$query = "SELECT Id, Name, Age__c, Class__c, Language__c, LetterLinkImageUrl__c FROM Student__c WHERE Class__c = '$classId'";
 
 		$resp = $this->execute($query, "query");
 
@@ -206,16 +205,10 @@ class LetterLinksModule extends Module
 		return $students;
 	}
 
+	// Shows the stand alone student page for a student at a given "Student__c" id.
+	public function showStudent($studentId){
 
-	public function getStudent($id){
-
-		$query = "SELECT Id, Name, Age__c, Language__c, LetterLinkImageUrl__c FROM Student__c WHERE Id = '$id'";
-
-		$resp = $this->execute($query, "query");
-
-		$student = Student::fromQueryResultRecord($resp->getRecord());
-		$letterSound = $student->getLetterSound();
-		if($student->getLetterLinkImageUrl() == null) $student->setLetterLinkImageUrl(PictureManager::getImage($letterSound));
+		$student = $this->getStudent($studentId);
 
 		$tpl = new Template("student-form");
 		$tpl->addPath(__DIR__ . "/templates");
@@ -223,6 +216,20 @@ class LetterLinksModule extends Module
 		return $tpl->render(array("student" => $student));
 	}
 
+
+	// Returns a "Student" php object.
+	public function getStudent($id){
+
+		$query = "SELECT Id, Class__c, Name, Age__c, Language__c, LetterLinkImageUrl__c FROM Student__c WHERE Id = '$id'";
+
+		$resp = $this->execute($query, "query");
+
+		$student = Student::fromQueryResultRecord($resp->getRecord());
+		$letterSound = $student->getLetterSound();
+		if($student->getLetterLinkImageUrl() == null) $student->setLetterLinkImageUrl(PictureManager::getImage($letterSound));
+
+		return $student;
+	}
 
 	public function updateStudent(){
 		
@@ -271,14 +278,14 @@ class LetterLinksModule extends Module
 
 		$api = $this->loadForceApi();
 
-		$req = $this->getRequest();
+		$student = $this->getStudent($studentId);  // Need to get the student object for the redirect back to the class list.
 
 		$resp = $api->delete("Student__c", $studentId);
 
 		if(!$resp->success()) throw new Exception($resp->getErrorMessage());
 
 		$resp = new HttpResponse();
-		$resp->addHeader(new HttpHeader("Location", "/my-account"));  // Should take you back to the class list.
+		$resp->addHeader(new HttpHeader("Location", "/classes/{$student->getClass__c()}/students"));
 
 		return $resp;
 	}
