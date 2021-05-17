@@ -278,14 +278,14 @@ class LetterLinksModule extends Module
 
 		$api = $this->loadForceApi();
 
-		$student = $this->getStudent($studentId);  // Need to get the student for the redirect back to the class list.
+		$student = $this->getStudent($studentId);  // Need to get the student object for the redirect back to the class list.
 
 		$resp = $api->delete("Student__c", $studentId);
 
 		if(!$resp->success()) throw new Exception($resp->getErrorMessage());
 
 		$resp = new HttpResponse();
-		$resp->addHeader(new HttpHeader("Location", "/classes/{$student->getClass__c()}/students"));  // Should take you back to the class list.
+		$resp->addHeader(new HttpHeader("Location", "/classes/{$student->getClass__c()}/students"));
 
 		return $resp;
 	}

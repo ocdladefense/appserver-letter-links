@@ -52,7 +52,7 @@
 
             <form enctype="multipart/form-data" id="upload-form" class="" name="upload-form" method="post" action="/add/student" >
                 <a class="tooltips" data-toggle="tooltip" data-placement="top" title="Add Student">
-                    Student Name
+                    Student Name<br />
                     <input type="text" id="Name" name="Name" />
                     <input type="hidden" name="Class__c" value="<?php print $class->getId(); ?>" />
                     
