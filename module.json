@@ -65,11 +65,11 @@
 			"authorization":"webserver"
 		},
 		"classes/%cId/students":{
-			"callback": "getStudentList",
+			"callback": "showStudentList",
 			"content-type": "text/html"	
 		},
 		"student/%id":{
-			"callback": "getStudent",
+			"callback": "showStudent",
 			"content-type": "text/html"	
 		},
 		"update/student":{

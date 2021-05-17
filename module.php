@@ -170,7 +170,7 @@ class LetterLinksModule extends Module
 	//////////////////////////////	Student Managment	/////////////////////////////////////////////////
 
 
-	public function getStudentList($classId){
+	public function showStudentList($classId){
 
 		//$classId = "a18040000000ja8AAA";
 
@@ -190,7 +190,7 @@ class LetterLinksModule extends Module
 
 	public function getStudents($classId) {
 
-		$query = "SELECT Id, Name, Age__c, Class__c Language__c, LetterLinkImageUrl__c FROM Student__c WHERE Class__c = '$classId'";
+		$query = "SELECT Id, Name, Age__c, Class__c, Language__c, LetterLinkImageUrl__c FROM Student__c WHERE Class__c = '$classId'";
 
 		$resp = $this->execute($query, "query");
 
@@ -206,6 +206,16 @@ class LetterLinksModule extends Module
 		return $students;
 	}
 
+	public function showStudent($studentId){
+
+		$student = $this->getStudent($studentId);
+
+		$tpl = new Template("student-form");
+		$tpl->addPath(__DIR__ . "/templates");
+
+		return $tpl->render(array("student" => $student));
+	}
+
 
 	public function getStudent($id){
 
@@ -217,10 +227,7 @@ class LetterLinksModule extends Module
 		$letterSound = $student->getLetterSound();
 		if($student->getLetterLinkImageUrl() == null) $student->setLetterLinkImageUrl(PictureManager::getImage($letterSound));
 
-		$tpl = new Template("student-form");
-		$tpl->addPath(__DIR__ . "/templates");
-
-		return $tpl->render(array("student" => $student));
+		return $student;
 	}
 
 
@@ -271,14 +278,14 @@ class LetterLinksModule extends Module
 
 		$api = $this->loadForceApi();
 
-		$req = $this->getRequest();
+		$student = $this->getStudent($studentId);  // Need to get the student for the redirect back to the class list.
 
 		$resp = $api->delete("Student__c", $studentId);
 
 		if(!$resp->success()) throw new Exception($resp->getErrorMessage());
 
 		$resp = new HttpResponse();
-		$resp->addHeader(new HttpHeader("Location", "/my-account"));  // Should take you back to the class list.
+		$resp->addHeader(new HttpHeader("Location", "/classes/{$student->getClass__c()}/students"));  // Should take you back to the class list.
 
 		return $resp;
 	}
