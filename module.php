@@ -148,11 +148,17 @@ class LetterLinksModule extends Module
 		$api = $this->loadForceApi();
 		$sobject = array(
 			'Teacher__c' => $teacherId,
-			"LetterLinkImageURL__c" => "/modules/appserver-letter-links/content/prototypeImages/dog.jpg",//$formData->LetterLinkImageURL__c,
-			"Name" => "Test Class from Form"//$formData->Name
+			"LetterLinkImageURL__c" => module_path()."/content/prototypeImages/dog.jpg",//$formData->LetterLinkImageURL__c,
+			"Name" => $formData->Name
 		 );
-		$response = $api->upsert("Class__c",$sobject);
-		return $this->getClassList($teacherId);
+		$resp = $api->upsert("Class__c",$sobject);
+		
+		if(!$resp->success()) throw new Exception($resp->getErrorMessage());
+
+		$resp = new HttpResponse();
+		$resp->addHeader(new HttpHeader("Location", "/my-account"));
+
+		return $resp;
 	}
 	
 

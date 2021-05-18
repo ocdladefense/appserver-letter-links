@@ -50,9 +50,8 @@
 
             <form enctype="multipart/form-data" id="upload-form" class="" name="upload-form" method="post" action="/add/class" >
                 <a class="tooltips" data-toggle="tooltip" data-placement="top" title="Submit Class">
-                    <h2>testing using inputs</h2>
-                    <input type="LetterLinkImageURL__c" value="/modules/appserver-letter-links/content/prototypeImages/tiger.jpg">
-                    <input type="Name" value="Test Adding A Class">
+                    Class Name<br />
+                    <input type="text" id="Name" name="Name" />
                     
                     <button type="submit" onclick="return confirm('Are you sure to add this class ?');" style="text-shadow: -1px 1px 2px grey; color: #75e049; display:block; font-size:x-large; border: 0; background: none;">
                         <i class="fas fa-check-circle"></i><span>Submit</span>
