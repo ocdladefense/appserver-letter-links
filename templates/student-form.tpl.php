@@ -37,7 +37,7 @@
 		<div id="editPicture"><i style="font-size: x-large; display: inline-block;" class="fas fa-image"></i><span name="descriptions">Edit Picture</span></div> -->
 	</div>
 
-	<div style="width: 100%;">
+	<div id="student-image" style="width: 100%;">
 		<img src="<?php print $student->getLetterLinkImageUrl(); ?>" alt="student-img">
 		
 	</div>
@@ -74,8 +74,6 @@
 	<input type="hidden" name="LetterLinkImageURL__c" value="<?php print $student->getLetterLinkImageUrl(); ?>" />
 	
 </form>
-
-<div id="form-container"></div>
 
 <link rel="stylesheet" type="text/css" href="/content/libraries/file/dragDrop/css/dragDrop.css" />
 <script src="/content/libraries/file/dragDrop/js/DragDropFileUpload.js"></script>
