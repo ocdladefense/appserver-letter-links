@@ -5,7 +5,10 @@ use Http\HttpHeader;
 
 // use Salesforce\Database as Database;
 use function LetterLinks\current_user;
-use Salesforce\Oauth as Oauth;
+use Salesforce\OAuth as OAuth;
+
+
+
 
 class LetterLinksModule extends Module
 {
@@ -14,6 +17,53 @@ class LetterLinksModule extends Module
 	public function __construct()
 	{
 		parent::__construct();
+	}
+	
+	
+	
+	public function section($section) {
+
+
+$links = array(
+	"daily-routine" => array(
+		"title" => "Daily Routine",
+		"links" => array(
+			"Plan-Do-Review",
+			"Group Times",
+			"Transitions",
+			"Mealtimes",
+			"Outside Time"
+		)
+	),
+	"" => array(
+	
+	)
+);
+
+		// print_r($links);exit;
+		$tpl = new Template("wheel-section");
+		$tpl->addPath(__DIR__ . "/templates");
+
+
+		$info = $links[$section];
+		
+		$title = $info["title"];
+		$links = $info["links"];
+  
+		return $tpl->render( array(
+			"section" => $section,
+			"title" => $title,
+			"links" => $links
+		));
+	}
+	
+	public function showApp() {
+
+		$tpl = new Template("wheel");
+		$tpl->addPath(__DIR__ . "/templates");
+
+
+		return $tpl;
 	}
 
 	public function showPage($page){

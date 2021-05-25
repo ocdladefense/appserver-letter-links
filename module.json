@@ -17,6 +17,14 @@
 	],
 	"languages":["en","es"],
 	"routes": {
+		"app": {
+			"callback": "showApp",
+			"content-type": "text\/html"
+		},
+		"section/%section": {
+			"callback": "section",
+			"content-type": "text\/html"
+		},
 		"letterlinks": {
 			"callback": "showHome",
 			"content-type": "text\/html"
